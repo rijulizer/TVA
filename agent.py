@@ -1,4 +1,5 @@
 import numpy as np
+from utils import abs_pos_distance
 class Agent:
     """
     strategy: None then its an honest voter otherwise the type of voting strategy to follow
@@ -21,12 +22,24 @@ class Agent:
             # initial random selection of preferences
             self.preference = np.random.permutation(candidates)
     
-    def cal_happiness(self,):
+    def cal_happiness(self, env_result: list):
         """
         Calculates agents individual happiness
+        Parameters:
+        - env_result (list): The voting result from environment
+        Returns:
+        hapiness (float)
         """
-
-        pass
+        # calculate the distance
+        raw_distances = abs_pos_distance(env_result, self.preference)
+        print(f"[DEBUG]- raw_distances: {raw_distances}")
+        x = 1/(1+np.array(raw_distances))
+        print(f"[DEBUG]- x: {x}")
+        alpha = np.ones_like(x)
+        print(f"[DEBUG]- alpha: {alpha}")
+        # happiness
+        self.happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
+        
 
     
     def set_vote(self, env_vot_scheme, env_preferences):
@@ -49,6 +62,11 @@ class Agent:
 if __name__ == "__main__":
     agent = Agent('a1')
     agent.set_preference(preference=None, candidates=['c1','c2','c3','c4','c5','c6'])
-    print(agent.get_preference())
+    # print(agent.preference)
     # candidates=['c1','c2','c3','c4','c5','c6']
     # print(np.random.permutation(candidates))
+
+    # test calculate happiness
+    env_result = ['c1','c2','c3','c4','c5','c6']
+    agent.cal_happiness(env_result)
+    print(f"prefernece: {agent.preference}, happiness: {agent.happiness}")
