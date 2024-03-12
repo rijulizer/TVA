@@ -48,6 +48,42 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
         #TODO: if two candidates have the result then order alphabatically             
         sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
 
+    #voting for one
+    inital_result = {}
+    if env_vote_scheme == 'voting_for_one':
+        for pref in agent_prefs.values():
+            # retrieve the first vote from the preference list
+            if pref[0] in inital_result.keys():
+                inital_result[pref[0]] += 1
+            else:
+                inital_result[pref[0]] = 1
+        sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
+
+    # voting for two
+    inital_result = {}
+    if env_vote_scheme == 'voting_for_two':
+        for pref in agent_prefs.values():
+            # retrieve the first two votes from the preference list
+            for j in range(2):
+                if pref[j] in inital_result.keys():
+                    inital_result[pref[j]] += 1
+                else:
+                    inital_result[pref[j]] = 1
+        sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
+
+    # anti plurality voting
+    inital_result = {}
+    if env_vote_scheme == 'anti_plurality_voting':
+        for pref in agent_prefs.values():
+            # retrieve all the votes except from the last one from the preference list
+            for j in range(len(pref)):
+                if j!= len(pref)-1:
+                    if pref[j] in inital_result.keys():
+                        inital_result[pref[j]] += 1
+                    else:
+                        inital_result[pref[j]] = 1
+        sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
+
     return sorted_dict
             
 
