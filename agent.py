@@ -7,7 +7,7 @@ class Agent:
     def __init__(self,name):
 
         self.name = name
-        self.strategy = None
+        self.strategy = False
         self.preference = []
         self.happiness = None
 
@@ -22,16 +22,17 @@ class Agent:
             # initial random selection of preferences
             self.preference = np.random.permutation(candidates)
     
-    def cal_happiness(self, env_result: list):
+    def cal_happiness(self, env_result: list, vote: list):
         """
         Calculates agents individual happiness
         Parameters:
         - env_result (list): The voting result from environment
+        - vote (list): The agents voting order for the candidates
         Returns:
         hapiness (float)
         """
         # calculate the distance
-        raw_distances = abs_pos_distance(env_result, self.preference)
+        raw_distances = abs_pos_distance(env_result, vote)
         print(f"[DEBUG]- raw_distances: {raw_distances}")
         x = 1/(1+np.array(raw_distances))
         print(f"[DEBUG]- x: {x}")
@@ -51,7 +52,7 @@ class Agent:
         """
         # if the agent is an honest agent then the vote and the preferences are same
         if not self.strategy:
-            self.vote = self.preference
+            self.final_vote = self.preference
         else:
             # TODO: Based on the startegy manipulate vote
             pass
@@ -68,5 +69,5 @@ if __name__ == "__main__":
 
     # test calculate happiness
     env_result = ['c1','c2','c3','c4','c5','c6']
-    agent.cal_happiness(env_result)
+    agent.cal_happiness(env_result, vote=agent.preference)
     print(f"prefernece: {agent.preference}, happiness: {agent.happiness}")

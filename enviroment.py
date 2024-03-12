@@ -10,7 +10,7 @@ class Environment:
         self.agent_votes = {}
         self.total_happiness = None
     
-    def set_agent_preferences(self, agents: list):
+    def collect_preferences(self, agents: list):
         """
         gets the preferences of all the agents
         """
@@ -33,9 +33,6 @@ class Environment:
 
         return voting_output
     
-    
-
-
     def cal_total_happiness(self, agents: list):
         """
         Calculates the total hapiness of the system
@@ -53,7 +50,7 @@ if __name__ == "__main__":
         agents.append(agent)
     # set rqandom preferene agents
     env = Environment()
-    env.set_agent_preferences(agents)
+    env.collect_preferences(agents)
 
     # pprint(f"Agent preferneces: {env.agent_prefs}")
     pprint(f"Voting result: {env.cal_result()}")
