@@ -30,11 +30,14 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
     Parameters:
     - env_vote_scheme (str): type of voting scheme
     Returns:
-    (list): voting preferences
+    (dict): candidates with their votes in the order from highest to lowest
+    (list): list of candidates in the order from highest to lowest
     """
-
-    # Borda voting
     inital_result = {}
+    for c in env_candidates:
+        inital_result[c]=0
+    # Borda voting
+    
     if env_vote_scheme == 'borda':
         for pref in agent_prefs.values():
             # calculate borda value of the preference list
@@ -47,10 +50,11 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
         # Sort the dictionary by values in reverse order
         #TODO: if two candidates have the result then order alphabatically             
         sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
+        sorted_list = list(sorted(inital_result, key=inital_result.get, reverse=True))
 
-    #voting for one
-    inital_result = {}
-    if env_vote_scheme == 'voting_for_one':
+    # Plurality / Voting for one 
+    
+    if env_vote_scheme == 'plurality':
         for pref in agent_prefs.values():
             # retrieve the first vote from the preference list
             if pref[0] in inital_result.keys():
@@ -58,9 +62,12 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
             else:
                 inital_result[pref[0]] = 1
         sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
+        sorted_list = list(sorted(inital_result, key=inital_result.get, reverse=True))
 
+    #TODO: if the candidate has no votes manually add it in the result with 0 votes 
+    #Example- {'c4': 3, 'c2': 1, 'c3': 1}" should be {'c4': 3, 'c2': 1, 'c3': 1, 'c1': 0}"
     # voting for two
-    inital_result = {}
+    
     if env_vote_scheme == 'voting_for_two':
         for pref in agent_prefs.values():
             # retrieve the first two votes from the preference list
@@ -70,9 +77,10 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
                 else:
                     inital_result[pref[j]] = 1
         sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
+        sorted_list = list(sorted(inital_result, key=inital_result.get, reverse=True))
 
     # anti plurality voting
-    inital_result = {}
+    
     if env_vote_scheme == 'anti_plurality_voting':
         for pref in agent_prefs.values():
             # retrieve all the votes except from the last one from the preference list
@@ -83,8 +91,9 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
                     else:
                         inital_result[pref[j]] = 1
         sorted_dict = dict(sorted(inital_result.items(), key=lambda item: item[1], reverse=True))
+        sorted_list = list(sorted(inital_result, key=inital_result.get, reverse=True))
 
-    return sorted_dict
+    return sorted_dict, sorted_list
             
 
 if __name__ == "__main__":
