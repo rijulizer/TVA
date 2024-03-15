@@ -5,6 +5,7 @@ from variables import env_candidates, env_vote_scheme
 from utils import voting_scheme
 
 class Experiment:
+
     def __init__(self, id, name):
         
         self.id = id
@@ -53,6 +54,14 @@ class Experiment:
             print(f"Agent: {agent.name}, strategic_agent: {agent.strategy} preference: {agent.preference}\n")
         
         return agents
+    
+    def run_exp(self, exp_name: str, variables: list[str]):
+        """
+
+        Args:
+            exp_name (str): _description_
+            variables (list[str]): _description_
+        """
             
 
 if __name__ == "__main__":
