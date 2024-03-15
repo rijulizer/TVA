@@ -1,6 +1,7 @@
 import numpy as np
-from utils import abs_pos_distance, voting_scheme
+from utils import voting_scheme, cal_happiness, map_vote, cal_result
 from pprint import pprint
+from variables import env_vote_scheme, agent_vote_strategy
 from itertools import combinations, permutations
 class Agent:
     """
@@ -23,33 +24,13 @@ class Agent:
         else:
             # initial random selection of preferences
             self.real_preference = np.random.permutation(candidates)
-    
-    def cal_happiness(self, env_result: list, pref: list):
-        """
-        Calculates agents individual happiness
-        Parameters:
-        - env_result (list): The voting result from environment
-        - pref (list): The agents prefernce order for the candidates
-        Returns:
-        hapiness (float)
-        """
-        # calculate the distance
-        raw_distances = abs_pos_distance(env_result, pref)
-        # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
-        x = 1/(1+np.array(raw_distances))
-        # print(f"[DEBUG]-[cal_happiness] x: {x}")
-        alpha = np.ones_like(x)
-        # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
-        # happiness
-        happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
-        # self.happiness = happiness
-        return happiness
 
     def set_vote(self, 
                  env_vote_scheme, 
                  agent_vote_strategy, 
                  env_result, 
                  env_agent_prefs,
+                 env_agent_votes,
             ):
         """
         Sets the final vote based on the agents strategy to maximize self happiness. Only strategic agent can use this function
@@ -78,29 +59,31 @@ class Agent:
             env_result_list = list(sorted(env_result, key=env_result.get, reverse=True))
             # print(f"[Debug]-[set_vote]- env_result_list: {env_result_list}")
             # calculate initial happiness
-            hap_init = self.cal_happiness(env_result_list, self.real_preference)
+            hap_init = cal_happiness(env_result_list, self.real_preference)
             print(f"[Debug]-[set_vote]- hap_init: {hap_init}")
             max_hap = hap_init
-            best_vote = self.real_preference
+            best_pref = self.real_preference
+            best_vote = map_vote(env_vote_scheme, best_pref)
             # get all possible voting options
-            all_combos = list(set(permutations(best_vote, len(best_vote))))
+            all_combos = list(set(permutations(best_pref, len(best_pref))))
             for comb in all_combos:
                 # for only the strategic agent change the perefence
                 env_agent_prefs[self.name] = list(comb)
-                # calculate result of the new prefernce order
-                voting_output,_ = voting_scheme(env_vote_scheme, env_agent_prefs)
-                # calculate happiness
-                voting_output_list = list(sorted(voting_output, key=voting_output.get, reverse=True))
-                # chech the happiness wrt, the real happiness
-                happiness = self.cal_happiness(voting_output_list, self.real_preference)
+                # generate vote from preference order
+                env_agent_votes[self.name] = map_vote(env_vote_scheme, list(comb))
+                # calculate result of the new votes
+                voting_output, voting_output_list = cal_result(env_agent_votes)
+                # calculate happiness, check the happiness wrt, the real_preference
+                happiness = cal_happiness(voting_output_list, self.real_preference)
                 print(f"[Debug]-[set_vote]- pref: {list(comb)}, voting_output: {voting_output}, happiness: {happiness}")
                 if happiness > max_hap:
                     max_hap = happiness
-                    best_vote = list(comb)
-                    print(f"[Debug]-[set_vote]- max_hap: {max_hap}, best_vote: {best_vote}")
-                
-                
+                    best_pref = list(comb)
+                    best_vote = map_vote(env_vote_scheme, list(comb))
+                    print(f"[Debug]-[set_vote]- max_hap: {max_hap}, best_pref: {best_pref}, best_vote: {best_vote}")
+                    
             self.final_vote = best_vote
+            self.best_pref = best_pref
                 
 
         
@@ -118,7 +101,7 @@ if __name__ == "__main__":
     # preference = ['c1','c2','c3','c4','c5','c6']
     # happiness = agent.cal_happiness(env_result, preference)
     # print(f"prefernece: {preference}, happiness: {happiness}")
-    happiness = agent.cal_happiness(env_result, agent.real_preference)
+    happiness = cal_happiness(env_result, agent.real_preference)
     print(f"real_prefernece: {agent.real_preference},\nresult: {env_result}, \nhappiness: {happiness}")
 
 
