@@ -1,6 +1,4 @@
 import numpy as np
-from variables import env_candidates, env_vote_scheme
-
 
 # distances used for happiness calculation
 def abs_pos_distance(list_o, list_p):
@@ -122,14 +120,17 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
     pass
 
 # voting schemes
-def map_vote(env_vote_scheme: str, pref: list[str], bullet_voting: bool = False) -> list[int]:
-    """
-    maps the prefernce of a single agent to a vote based on the voring scheme, 
-    Parameters:
-    - env_vote_scheme (str): type of voting scheme
-    - pref : list of candidates as the preference of a single agent
+def map_vote(env_vote_scheme: str, env_candidates: list[str], pref: list[str], bullet_voting: bool = False) -> list[int]:
+    """maps the prefernce of a single agent to a vote based on the voring scheme
+
+    Args:
+        env_vote_scheme (str): 
+        env_candidates (list[str]): 
+        pref (list[str]): the list of candidate preference of an agent
+        bullet_voting (bool, optional): whether bullet voting or not. Defaults to False.
+
     Returns:
-    (list): vote based on the scheme
+        list[int]: _description_
     """
     # TODO: implement the bullet_voting logic
     if env_vote_scheme == 'plurality':
@@ -166,7 +167,7 @@ def map_vote(env_vote_scheme: str, pref: list[str], bullet_voting: bool = False)
             vote *= (len(vote)-1)
     return vote
 
-def cal_result(votes: dict) -> (dict,list) : #-> tuple[dict,list]
+def cal_result(env_candidates, votes: dict) -> (dict,list) : #-> tuple[dict,list]
     inital_result = {}
     # iterate all the agent votes
     for vote in votes.values():

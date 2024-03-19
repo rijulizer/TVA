@@ -1,7 +1,6 @@
 import numpy as np
 from utils import voting_scheme, cal_happiness, map_vote, cal_result
 from pprint import pprint
-from variables import env_vote_scheme, agent_vote_strategy
 from itertools import combinations, permutations
 class Agent:
     """
@@ -12,7 +11,7 @@ class Agent:
         self.name = name
         self.strategy = False
         self.real_preference = []
-        # self.happiness = None
+        self.happiness = 0
 
         # self.best_pref = []
         # self.final_vote =[]
@@ -29,7 +28,8 @@ class Agent:
             self.real_preference = np.random.permutation(candidates).tolist()
 
     def set_vote(self, 
-                 env_vote_scheme, 
+                 env_vote_scheme,
+                 env_candidates, 
                  agent_vote_strategy, 
                  env_result, 
                  env_agent_prefs,
@@ -72,34 +72,34 @@ class Agent:
                 print(f"[Debug]-[set_vote]- hap_init: {hap_init}")
                 max_hap = hap_init
                 best_pref = self.real_preference
-                best_vote = map_vote(env_vote_scheme, best_pref, bullet_voting)
+                best_vote = map_vote(env_vote_scheme, env_candidates, best_pref, bullet_voting)
                 # get all possible voting options
                 all_combos = list(set(permutations(best_pref, len(best_pref))))
                 for comb in all_combos:
                     # for only the strategic agent change the perefence
                     env_agent_prefs[self.name] = list(comb)
                     # generate vote from preference order
-                    env_agent_votes[self.name] = map_vote(env_vote_scheme, list(comb), bullet_voting)
+                    env_agent_votes[self.name] = map_vote(env_vote_scheme, env_candidates, list(comb), bullet_voting)
                     # calculate result of the new votes
-                    voting_output, voting_output_list = cal_result(env_agent_votes)
+                    voting_output, voting_output_list = cal_result(env_candidates, env_agent_votes)
                     # calculate happiness, check the happiness wrt, the real_preference
                     happiness = cal_happiness(voting_output_list, self.real_preference)
                     print(f"[Debug]-[set_vote]- pref: {list(comb)}, voting_output: {voting_output}, happiness: {happiness}")
                     if happiness > max_hap:
                         max_hap = happiness
                         best_pref = list(comb)
-                        best_vote = map_vote(env_vote_scheme, list(comb), bullet_voting)
+                        best_vote = map_vote(env_vote_scheme, env_candidates, list(comb), bullet_voting)
                         print(f"[Debug]-[set_vote]- max_hap: {max_hap}, best_pref: {best_pref}, best_vote: {best_vote}")
                         
                 self.final_vote = best_vote
                 self.best_pref = best_pref
 
             elif bullet_voting:
-                bullet_vote = map_vote(env_vote_scheme, self.real_preference, bullet_voting)
+                bullet_vote = map_vote(env_vote_scheme, env_candidates, self.real_preference, bullet_voting)
                 # generate vote from preference order
                 env_agent_votes[self.name] = bullet_vote
                 # calculate result of the new votes
-                voting_output, voting_output_list = cal_result(env_agent_votes)
+                voting_output, voting_output_list = cal_result(env_candidates, env_agent_votes)
                 # calculate happiness, check the happiness wrt, the real_preference
                 happiness = cal_happiness(voting_output_list, self.real_preference)
                 print(f"[Debug]-[set_vote]- pref: {self.real_preference}, voting_output: {voting_output}, happiness: {happiness}, bullet vote: {bullet_vote}")

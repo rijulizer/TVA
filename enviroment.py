@@ -1,13 +1,23 @@
 import numpy as np
 from agent import Agent
-from variables import env_candidates, env_vote_scheme, agent_vote_strategy
 from utils import voting_scheme, map_vote, cal_result
 from pprint import pprint
 
 class Environment:
-    def __init__(self,
-                 num_agents : int = 5, 
-                 num_strat_agents : int = 1):
+    def __init__(
+        self,
+        env_candidates : list[str] = ['c1','c2','c3','c4'], 
+        env_vote_scheme: str = 'borda', 
+        agent_vote_strategy : str = 'compromising', #['compromising', 'bullet_voting', 'combination']
+        num_agents : int = 5, 
+        num_strat_agents : int = 1,
+        ):
+        
+        self.env_candidates = env_candidates
+        self.env_vote_scheme = env_vote_scheme 
+        self.agent_vote_strategy = agent_vote_strategy
+        self.num_agents = num_agents
+        self.num_strat_agents = num_strat_agents
         
         self.agents = []
         self.agent_prefs = {}
@@ -19,7 +29,7 @@ class Environment:
                 # instantiate agent objects
                 agent = Agent(f'agent_{i}')
                 # set agent preferences randomly
-                agent.set_preference(candidates = env_candidates)
+                agent.set_preference(candidates = self.env_candidates)
                 self.agents.append(agent)
         for i in range(num_strat_agents):
             # make these agents strategic
@@ -36,45 +46,41 @@ class Environment:
             # get preferences
             self.agent_prefs[a.name] = a.real_preference
             # get votes
-            self.agent_votes[a.name] = map_vote(env_vote_scheme, a.real_preference)
+            self.agent_votes[a.name] = map_vote(self.env_vote_scheme, self.env_candidates, a.real_preference)
         pprint(f"[DEBUG]-[Env], votes: {self.agent_votes}")
-
-    
-    # def set_agent_votes(self, agents: list):
-    #     """
-    #     gets the votes of all the agents
-    #     """
-    #     # TODO: this function should have the agent votes instead of preferences
-    #     for a in agents:
-    #         self.agent_prefs[a.name] = a.real_preference
-    
-    # def cal_total_happiness(self, agents: list):
-    #     """
-    #     Calculates the total hapiness of the system
-    #     """
-    #     for a in agents:
-    #         self.total_happiness += a.happiness
-    #     return self.total_happiness
+   
+    def cal_total_happiness(self):
+        """Calculates the total hapiness of the system
+        """
+        
+        for a in self.agents:
+            self.total_happiness += a.happiness
+        return self.total_happiness
 
 if __name__ == "__main__":
-    env_vote_scheme = 'borda'
-    agent_vote_strategy = 'combination'
-    
+    # env_vote_scheme = 'borda'
+    # agent_vote_strategy = 'combination'
+    # num_agents : int = 5, 
+    # num_strat_agents : int = 1,
+
     # test define env
-    env = Environment(5,1)
+    env = Environment(['c1','c2','c3','c4'], 'borda', 'combination', 5,1)
     env.collect_prefs_and_votes()
 
     print("#"*50)
     # calculate initial result
     # pprint(f"Agent preferences: {env.agent_prefs}")
     # pprint(f"Agent votes: {env.agent_votes}")
-    env_init_result, _ = cal_result(env.agent_votes)
+    env_init_result, _ = cal_result(env.env_candidates, env.agent_votes)
     pprint(f"Inital voting result Dict: {env_init_result}")
 
-    # Set the vote for the strategic agent
-    env.agents[0].set_vote(env_vote_scheme, 
-                           agent_vote_strategy, 
-                           env_init_result, 
-                           env.agent_prefs,
-                           env.agent_votes)
+    # # Set the vote for the strategic agent
+    env.agents[0].set_vote(
+            env.env_vote_scheme,
+            env.env_candidates, 
+            env.agent_vote_strategy, 
+            env_init_result, 
+            env.agent_prefs,
+            env.agent_votes,
+        )
     pprint(f"[Debug]-[Env]- Best vote: {env.agents[0].final_vote} /n Best pref: {env.agents[0].best_pref}")
