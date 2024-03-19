@@ -11,6 +11,7 @@ class Experiment:
         
         self.id = id
         self.name = name
+        print(f"exp_id: {self.id}, exp_name: {self.name}")
 
     def set_exp_variables(
             self, 
@@ -52,10 +53,14 @@ class Experiment:
             self.num_strat_agents,
         )
         env.collect_prefs_and_votes()
-        print("#"*50)
         # calculate initial result
-        env_init_result, _ = cal_result(env.env_candidates, env.agent_votes)
+        env_init_result, env_init_result_list = cal_result(env.env_candidates, env.agent_votes)
         print(f"Inital voting result Dict: {env_init_result}")
+
+        # initial happiness
+        env.cal_total_happiness(env_init_result_list)
+        print(f"Initial Total Happiness: {env.total_happiness}")
+
 
         # Set the vote for the strategic agent
         # # Set the vote for the strategic agent
@@ -67,15 +72,24 @@ class Experiment:
                 env.agent_prefs,
                 env.agent_votes,
             )
-        print(f"[Debug]-[Env]- Best vote: {env.agents[0].final_vote} /n Best pref: {env.agents[0].best_pref}")
+        print(f"[Debug]-[Env]- Best vote: {env.agents[0].final_vote} \n Best pref: {env.agents[0].best_pref}")
         
+        # collect final votes and preferences
+        env.collect_prefs_and_votes()
+        # calculate final result
+        env_final_result, env_final_result_list = cal_result(env.env_candidates, env.agent_votes)
+        print(f"Final voting result Dict: {env_final_result}")
+
+        env.cal_total_happiness(env_final_result_list)
+        print(f"Fianl Total Happiness: {env.total_happiness}")
 
 if __name__ == "__main__":
     
     # Create experiment
+    print("#"*50)
     exp = Experiment(id=0, name='first_experiment')
 
     # Set experiment variables
-    exp.set_exp_variables(['c1','c2','c3','c4'], 'borda', 'combination', 5, 1)
+    exp.set_exp_variables(['c1','c2','c3','c4','c5'], 'borda', 'compromising', 20, 1)
     
     exp.run_exp()
