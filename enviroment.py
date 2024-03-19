@@ -57,7 +57,9 @@ class Environment:
     #     return self.total_happiness
 
 if __name__ == "__main__":
-    env_vote_scheme = 'plurality'
+    env_vote_scheme = 'borda'
+    agent_vote_strategy = 'combination'
+    
     # test define env
     env = Environment(5,1)
     env.collect_prefs_and_votes()

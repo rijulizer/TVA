@@ -122,7 +122,7 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
     pass
 
 # voting schemes
-def map_vote(env_vote_scheme: str, pref: list[str], bullet_vote: bool = False) -> list[int]:
+def map_vote(env_vote_scheme: str, pref: list[str], bullet_voting: bool = False) -> list[int]:
     """
     maps the prefernce of a single agent to a vote based on the voring scheme, 
     Parameters:
@@ -131,7 +131,7 @@ def map_vote(env_vote_scheme: str, pref: list[str], bullet_vote: bool = False) -
     Returns:
     (list): vote based on the scheme
     """
-    # TODO: implement the bullet_vote logic
+    # TODO: implement the bullet_voting logic
     if env_vote_scheme == 'plurality':
         # check with all the elements of env_candidates with the first preference
         vote = np.array(env_candidates)==pref[0]
@@ -148,15 +148,25 @@ def map_vote(env_vote_scheme: str, pref: list[str], bullet_vote: bool = False) -
         
     elif env_vote_scheme == 'borda':
 
-        vote = [len(env_candidates)-pref.tolist().index(c)-1 for c in env_candidates]
+        vote = [len(env_candidates)-pref.index(c)-1 for c in env_candidates]
+        # vote = [len(env_candidates)-pref.index(c)-1 for c in env_candidates]
+
     
     else:
         raise ValueError("env_vote_scheme should be on of the options")
 
     # print(f"[Debug]-[utils]-[map_vote]- pref : {pref}, vote: {vote}")
+
+    # if bullet voting the vote is always the highest preference only! 1 for antiplurality and voting for two, len(vote)-1 for borda
+    if bullet_voting:
+
+        vote = np.array(env_candidates)==pref[0]
+        vote = vote.astype(int)
+        if env_vote_scheme == 'borda':
+            vote *= (len(vote)-1)
     return vote
 
-def cal_result(votes: dict) -> (dict,list) :
+def cal_result(votes: dict) -> (dict,list) : #-> tuple[dict,list]
     inital_result = {}
     # iterate all the agent votes
     for vote in votes.values():
