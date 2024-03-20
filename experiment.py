@@ -58,12 +58,13 @@ class Experiment:
         env.collect_prefs_and_votes()
         # calculate initial result
         env_init_result, env_init_result_list = cal_result(env.env_candidates, env.agent_votes)
-        print(f"Inital voting result Dict: {env_init_result}")
+        print(f"Initial voting result Dict: {env_init_result}")
 
         # initial happiness
         env.cal_total_happiness(env_init_result_list)
         print(f"Initial Total Happiness: {env.total_happiness}")
-
+        init_total_happiness = env.total_happiness
+        print(f"[Debug]-[Exp]- init_total_happiness: {init_total_happiness}")
 
         # Set the vote for the strategic agent
         # # Set the vote for the strategic agent
@@ -85,7 +86,14 @@ class Experiment:
         print(f"Final voting result Dict: {env_final_result}")
 
         env.cal_total_happiness(env_final_result_list)
-        print(f"Fianl Total Happiness: {env.total_happiness}")
+        print(f"Final Total Happiness: {env.total_happiness}")
+        final_total_happiness = env.total_happiness
+        print(f"[Debug]-[Exp]- final_total_happiness: {final_total_happiness}")
+
+
+        # TODO RISK
+
+        return init_total_happiness, final_total_happiness
 
 if __name__ == "__main__":
     

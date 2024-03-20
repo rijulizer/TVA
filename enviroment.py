@@ -63,7 +63,7 @@ class Environment:
         print(f"[DEBUG]-[Env], votes: {self.agent_votes} \n")
    
     def cal_total_happiness(self, env_result_list):
-        """Calculates the total hapiness of the system
+        """Calculates the total happiness of the system
         """
         self.total_happiness = 0
         for a in self.agents:
@@ -111,4 +111,4 @@ if __name__ == "__main__":
     print(f"Final voting result Dict: {env_final_result}")
 
     env.cal_total_happiness(env_final_result_list)
-    print(f"Fianl Total Happiness: {env.total_happiness}")
+    print(f"Final Total Happiness: {env.total_happiness}")
