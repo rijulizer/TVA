@@ -24,7 +24,7 @@ def abs_pos_distance(list_o, list_p):
     return dist
 
 # calculate happiness
-def cal_happiness(env_result: list, pref: list):
+def cal_happiness(env_result: list, pref: list, type: str):
     """
     Calculates agents individual happiness
     Parameters:
@@ -33,16 +33,36 @@ def cal_happiness(env_result: list, pref: list):
     Returns:
     hapiness (float)
     """
-    # calculate the distance
-    raw_distances = abs_pos_distance(env_result, pref)
-    # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
-    x = 1/(1+np.array(raw_distances))
-    # print(f"[DEBUG]-[cal_happiness] x: {x}")
-    alpha = np.ones_like(x)
-    # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
-    # happiness
-    happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
-    # self.happiness = happiness
+
+    if type == 'A':
+        # calculate the distance
+        raw_distances = abs_pos_distance(env_result, pref)
+        # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
+        x = 1/(1+np.array(raw_distances))
+        # print(f"[DEBUG]-[cal_happiness] x: {x}")
+        alpha = np.ones_like(x)
+        # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
+        # happiness
+        happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
+        # self.happiness = happiness
+    elif type == 'B':
+        # calculate the distance
+        raw_distances = abs_pos_distance(env_result, pref)
+        # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
+        x = 1/(1+np.array(raw_distances))
+        # print(f"[DEBUG]-[cal_happiness] x: {x}")
+        # TODO Change this to something that works with any number of candidates
+        alpha = [0.5, 0.2, 0.15, 0.1, 0.05]
+        # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
+        # happiness
+        happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
+        # self.happiness = happiness
+    elif type == 'C':
+        beta = [pow(0.5,i) for i in range(len(pref))]
+        beta[-1] = 0
+        happiness = beta[pref.index(env_result[0])]
+    else:
+        raise NotImplementedError("Not a valid happiness function")
     return happiness
 
 # voting schemes deprecated
