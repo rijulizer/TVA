@@ -9,6 +9,7 @@ class Environment:
         env_candidates : list[str] = ['c1','c2','c3','c4'], 
         env_vote_scheme: str = 'borda', 
         agent_vote_strategy : str = 'compromising', #['compromising', 'bullet_voting', 'combination']
+        happiness_type : str = 'A', #B, #C
         num_agents : int = 5, 
         num_strat_agents : int = 1,
         ):
@@ -18,6 +19,7 @@ class Environment:
         self.agent_vote_strategy = agent_vote_strategy
         self.num_agents = num_agents
         self.num_strat_agents = num_strat_agents
+        self.happiness_type = happiness_type
         
         self.agents = []
         self.agent_prefs = {}
@@ -65,7 +67,7 @@ class Environment:
         """
         self.total_happiness = 0
         for a in self.agents:
-            hap_init = cal_happiness(env_result_list, self.agent_prefs[a.name])
+            hap_init = cal_happiness(env_result_list, self.agent_prefs[a.name], self.happiness_type)
             self.total_happiness += hap_init
         return self.total_happiness
 
@@ -76,7 +78,7 @@ if __name__ == "__main__":
     # num_strat_agents : int = 1,
 
     # test define env
-    env = Environment(['c1','c2','c3','c4'], 'borda', 'combination', 5,1)
+    env = Environment(['c1','c2','c3','c4'], 'borda', 'combination', 'A', 5,1)
     
     env.collect_prefs_and_votes()
     print("#"*50)
@@ -93,7 +95,8 @@ if __name__ == "__main__":
     env.agents[0].set_vote(
             env.env_vote_scheme,
             env.env_candidates, 
-            env.agent_vote_strategy, 
+            env.agent_vote_strategy,
+            env.happiness_type, 
             env_init_result, 
             env.agent_prefs,
             env.agent_votes,

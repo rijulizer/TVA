@@ -30,6 +30,7 @@ class Agent:
                  env_vote_scheme,
                  env_candidates, 
                  agent_vote_strategy, 
+                 happiness_type,
                  env_result, 
                  env_agent_prefs,
                  env_agent_votes,
@@ -52,6 +53,11 @@ class Agent:
             # self.final_vote = self.real_preference
             raise NotImplementedError("Non strategic agent sould not call this function")
         else:
+            env_result_list = list(sorted(env_result, key=env_result.get, reverse=True))
+            hap_init = cal_happiness(env_result_list, self.real_preference, happiness_type)
+            best_pref = self.real_preference
+            strategic_voted = False
+            risk_counter = 0
             if compromising:
                 # TODO: Based on the startegy manipulate vote
                 # if agent_vote_strategy== "basic": #TODO: this term is not right
@@ -64,14 +70,10 @@ class Agent:
                 # step-4: send the final vote
 
                 # getting a list of candidates from dictionary
-                env_result_list = list(sorted(env_result, key=env_result.get, reverse=True))
                 # print(f"[Debug]-[set_vote]- env_result_list: {env_result_list}")
                 # calculate initial happiness
-                hap_init = cal_happiness(env_result_list, self.real_preference)
                 print(f"[Debug]-[set_vote]- hap_init: {hap_init}")
                 max_hap = hap_init
-                best_pref = self.real_preference
-                strategic_voted = False
                 best_vote = map_vote(env_vote_scheme, env_candidates, best_pref, bullet_voting)
                 # get all possible voting options
                 all_combos = list(set(permutations(best_pref, len(best_pref))))
@@ -83,8 +85,12 @@ class Agent:
                     # calculate result of the new votes
                     voting_output, voting_output_list = cal_result(env_candidates, env_agent_votes)
                     # calculate happiness, check the happiness wrt, the real_preference
-                    happiness = cal_happiness(voting_output_list, self.real_preference)
+                    happiness = cal_happiness(voting_output_list, self.real_preference, happiness_type)
                     # print(f"[Debug]-[set_vote]- pref: {list(comb)}, voting_output: {voting_output}, happiness: {happiness}")
+
+                    if happiness > hap_init:
+                        risk_counter += 1
+
                     if happiness > max_hap:
                         strategic_voted = True
                         max_hap = happiness
@@ -96,24 +102,30 @@ class Agent:
                 self.best_pref = best_pref
                         
             elif bullet_voting:
-                strategic_voted = True
+                # if happiness > hap_init:
+                #     risk_counter += 1
+                # strategic_voted = True
                 bullet_vote = map_vote(env_vote_scheme, env_candidates, self.real_preference, bullet_voting)
                 # generate vote from preference order
                 env_agent_votes[self.name] = bullet_vote
                 # calculate result of the new votes
                 voting_output, voting_output_list = cal_result(env_candidates, env_agent_votes)
                 # calculate happiness, check the happiness wrt, the real_preference
-                happiness = cal_happiness(voting_output_list, self.real_preference)
+                happiness = cal_happiness(voting_output_list, self.real_preference, happiness_type)
                 print(f"[Debug]-[set_vote]- pref: {self.real_preference}, voting_output: {voting_output}, happiness: {happiness}, bullet vote: {bullet_vote}\n")
+                if happiness > hap_init:
+                    risk_counter += 1
+                    strategic_voted = True
+                    self.final_vote = bullet_vote
 
                 self.best_pref = self.real_preference
-                self.final_vote = bullet_vote
 
             else:
                 raise NotImplementedError("Strategist doesnt use a valid strategy")
 
             print(f"[Debug]-[set_vote]- strategic_voted: {strategic_voted}\n")
-                
+
+
 if __name__ == "__main__":
     # Test create agent 
     agent = Agent('a1')
@@ -121,13 +133,13 @@ if __name__ == "__main__":
     print(agent.real_preference)
     # # candidates=['c1','c2','c3','c4','c5','c6']
     # # print(np.random.permutation(candidates))
-
+    happiness_type = 'A'
     # test calculate happiness
     env_result = ['c1','c2','c3','c4','c5','c6']
     # preference = ['c1','c2','c3','c4','c5','c6']
     # happiness = agent.cal_happiness(env_result, preference)
     # print(f"prefernece: {preference}, happiness: {happiness}")
-    happiness = cal_happiness(env_result, agent.real_preference)
+    happiness = cal_happiness(env_result, agent.real_preference, happiness_type)
     print(f"real_prefernece: {agent.real_preference},\nresult: {env_result}, \nhappiness: {happiness}")
 
 

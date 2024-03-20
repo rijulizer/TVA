@@ -18,6 +18,7 @@ class Experiment:
             env_candidates : list[str] = ['c1','c2','c3','c4'], 
             env_vote_scheme: str = 'borda', 
             agent_vote_strategy : str = 'compromising', #['compromising', 'bullet_voting', 'combination']
+            happiness_type : str = 'A', #B, #C
             num_agents : int = 5, 
             num_strat_agents : int = 1
             ):
@@ -34,6 +35,7 @@ class Experiment:
         self.env_candidates = env_candidates
         self.env_vote_scheme = env_vote_scheme 
         self.agent_vote_strategy = agent_vote_strategy
+        self.happiness_type = happiness_type
         self.num_agents = num_agents
         self.num_strat_agents = num_strat_agents
 
@@ -49,6 +51,7 @@ class Experiment:
             self.env_candidates, 
             self.env_vote_scheme,
             self.agent_vote_strategy,
+            self.happiness_type,
             self.num_agents,
             self.num_strat_agents,
         )
@@ -68,6 +71,7 @@ class Experiment:
                 env.env_vote_scheme,
                 env.env_candidates, 
                 env.agent_vote_strategy, 
+                env.happiness_type,
                 env_init_result, 
                 env.agent_prefs,
                 env.agent_votes,
@@ -90,6 +94,6 @@ if __name__ == "__main__":
     exp = Experiment(id=0, name='first_experiment')
 
     # Set experiment variables
-    exp.set_exp_variables(['c1','c2','c3','c4','c5'], 'borda', 'compromising', 20, 1)
+    exp.set_exp_variables(['c1','c2','c3','c4','c5'], 'borda', 'combination', 'B', 5, 1)
     
     exp.run_exp()
