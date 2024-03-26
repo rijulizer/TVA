@@ -1,6 +1,4 @@
 import numpy as np
-from variables import env_candidates, env_vote_scheme
-
 
 # distances used for happiness calculation
 def abs_pos_distance(list_o, list_p):
@@ -26,7 +24,7 @@ def abs_pos_distance(list_o, list_p):
     return dist
 
 # calculate happiness
-def cal_happiness(env_result: list, pref: list):
+def cal_happiness(env_result: list, pref: list, type: str):
     """
     Calculates agents individual happiness
     Parameters:
@@ -35,16 +33,36 @@ def cal_happiness(env_result: list, pref: list):
     Returns:
     hapiness (float)
     """
-    # calculate the distance
-    raw_distances = abs_pos_distance(env_result, pref)
-    # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
-    x = 1/(1+np.array(raw_distances))
-    # print(f"[DEBUG]-[cal_happiness] x: {x}")
-    alpha = np.ones_like(x)
-    # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
-    # happiness
-    happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
-    # self.happiness = happiness
+
+    if type == 'A':
+        # calculate the distance
+        raw_distances = abs_pos_distance(env_result, pref)
+        # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
+        x = 1/(1+np.array(raw_distances))
+        # print(f"[DEBUG]-[cal_happiness] x: {x}")
+        alpha = np.ones_like(x)
+        # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
+        # happiness
+        happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
+        # self.happiness = happiness
+    elif type == 'B':
+        # calculate the distance
+        raw_distances = abs_pos_distance(env_result, pref)
+        # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
+        x = 1/(1+np.array(raw_distances))
+        # print(f"[DEBUG]-[cal_happiness] x: {x}")
+        # TODO Change this to something that works with any number of candidates
+        alpha = [0.5, 0.2, 0.15, 0.1, 0.05]
+        # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
+        # happiness
+        happiness = np.round(np.dot(alpha,x)/ np.sum(alpha),3)
+        # self.happiness = happiness
+    elif type == 'C':
+        beta = [pow(0.5,i) for i in range(len(pref))]
+        beta[-1] = 0
+        happiness = beta[pref.index(env_result[0])]
+    else:
+        raise NotImplementedError("Not a valid happiness function")
     return happiness
 
 # voting schemes deprecated
@@ -122,16 +140,19 @@ def voting_scheme(env_vote_scheme: str, agent_prefs: dict) -> list[str]:
     pass
 
 # voting schemes
-def map_vote(env_vote_scheme: str, pref: list[str], bullet_vote: bool = False) -> list[int]:
-    """
-    maps the prefernce of a single agent to a vote based on the voring scheme, 
-    Parameters:
-    - env_vote_scheme (str): type of voting scheme
-    - pref : list of candidates as the preference of a single agent
+def map_vote(env_vote_scheme: str, env_candidates: list[str], pref: list[str], bullet_voting: bool = False) -> list[int]:
+    """maps the prefernce of a single agent to a vote based on the voring scheme
+
+    Args:
+        env_vote_scheme (str): 
+        env_candidates (list[str]): 
+        pref (list[str]): the list of candidate preference of an agent
+        bullet_voting (bool, optional): whether bullet voting or not. Defaults to False.
+
     Returns:
-    (list): vote based on the scheme
+        list[int]: _description_
     """
-    # TODO: implement the bullet_vote logic
+    # TODO: implement the bullet_voting logic
     if env_vote_scheme == 'plurality':
         # check with all the elements of env_candidates with the first preference
         vote = np.array(env_candidates)==pref[0]
@@ -148,15 +169,25 @@ def map_vote(env_vote_scheme: str, pref: list[str], bullet_vote: bool = False) -
         
     elif env_vote_scheme == 'borda':
 
-        vote = [len(env_candidates)-pref.tolist().index(c)-1 for c in env_candidates]
+        vote = [len(env_candidates)-pref.index(c)-1 for c in env_candidates]
+        # vote = [len(env_candidates)-pref.index(c)-1 for c in env_candidates]
+
     
     else:
         raise ValueError("env_vote_scheme should be on of the options")
 
     # print(f"[Debug]-[utils]-[map_vote]- pref : {pref}, vote: {vote}")
+
+    # if bullet voting the vote is always the highest preference only! 1 for antiplurality and voting for two, len(vote)-1 for borda
+    if bullet_voting:
+
+        vote = np.array(env_candidates)==pref[0]
+        vote = vote.astype(int)
+        if env_vote_scheme == 'borda':
+            vote *= (len(vote)-1)
     return vote
 
-def cal_result(votes: dict) -> (dict,list) :
+def cal_result(env_candidates, votes: dict) -> (dict,list) : #-> tuple[dict,list]
     inital_result = {}
     # iterate all the agent votes
     for vote in votes.values():
