@@ -26,6 +26,36 @@ class Agent:
             # initial random selection of preferences
             self.real_preference = np.random.permutation(candidates).tolist()
 
+    def get_combination_list(self,
+                             env_vote_scheme,
+                             best_pref
+                             ):
+        combinations_list = []
+        if env_vote_scheme == 'plurality':
+            for candidate in best_pref:
+                best_preference_copy = best_pref.copy()
+                best_preference_copy.remove(candidate)
+                combinations_list.append([candidate]+best_preference_copy)
+        elif env_vote_scheme == 'anti_plurality':
+             for candidate in best_pref:
+                best_preference_copy = best_pref.copy()
+                best_preference_copy.remove(candidate)
+                combinations_list.append(best_preference_copy+[candidate])
+        elif env_vote_scheme == 'voting_for_two':
+             temp_combinations_tuple = combinations(best_pref, 2)
+             temp_combinations_list = [list(i) for i in temp_combinations_tuple]
+             print(temp_combinations_list)
+             for sublist in temp_combinations_list:
+                best_preference_copy = best_pref.copy()
+                best_preference_copy.remove(sublist[0])
+                best_preference_copy.remove(sublist[1])
+                combinations_list.append(sublist+best_preference_copy)
+        elif env_vote_scheme == 'borda':
+            #TODO: Needs optimization for this case
+            combinations_list = list(set(permutations(best_pref, len(best_pref))))
+        #print(combinations_list)
+        return combinations_list
+
     def set_vote(self, 
                  env_vote_scheme,
                  env_candidates, 
@@ -76,7 +106,8 @@ class Agent:
                 max_hap = hap_init
                 best_vote = map_vote(env_vote_scheme, env_candidates, best_pref, bullet_voting)
                 # get all possible voting options
-                all_combos = list(set(permutations(best_pref, len(best_pref))))
+                #all_combos = list(set(permutations(best_pref, len(best_pref))))
+                all_combos = self.get_combination_list(env_vote_scheme,best_pref)
                 for comb in all_combos:
                     # for only the strategic agent change the perefence
                     env_agent_prefs[self.name] = list(comb)
@@ -124,7 +155,6 @@ class Agent:
                 raise NotImplementedError("Strategist doesnt use a valid strategy")
 
             print(f"[Debug]-[set_vote]- strategic_voted: {strategic_voted}\n")
-
 
 if __name__ == "__main__":
     # Test create agent 
