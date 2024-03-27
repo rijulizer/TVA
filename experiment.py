@@ -91,7 +91,7 @@ class Experiment:
         print(f"[Debug]-[Exp]- final_total_happiness: {final_total_happiness}")
 
 
-        risk = env.calculate_risk()
+        risk = env.calculate_risk(env_init_result)
 
         return init_total_happiness, final_total_happiness,risk
 
