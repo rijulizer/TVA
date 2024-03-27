@@ -81,6 +81,10 @@ class Environment:
         self.total_risk = np.round(1/(1+np.sum(np.array(difference)*alpha_risk)/no_buckets),3)
         print(f"[DEBUG]-[Env] calculate_risk total_votes:{total_votes}")
         return self.total_risk
+    
+    def calculate_final_risk(self):
+        env_final_result, _ = cal_result(self.env_candidates, self.agent_votes)
+        return self.calculate_risk(env_final_result)
 
 if __name__ == "__main__":
     # env_vote_scheme = 'borda'
@@ -124,5 +128,5 @@ if __name__ == "__main__":
     env.cal_total_happiness(env_final_result_list)
     print(f"Final Total Happiness: {env.total_happiness}")
 
-    risk = env.calculate_risk(env_init_result)
+    risk = env.calculate_final_risk()
     print(f"Final Total Risk: {risk}")
