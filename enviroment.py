@@ -25,6 +25,7 @@ class Environment:
         self.agent_prefs = {}
         self.agent_votes = {}
         self.total_happiness = 0
+        self.total_risk = 0
         
         # create and define agents
         for i in range(num_agents):
@@ -70,6 +71,16 @@ class Environment:
             hap_init = cal_happiness(env_result_list, self.agent_prefs[a.name], self.happiness_type)
             self.total_happiness += hap_init
         return self.total_happiness
+    
+    def calculate_risk(self,env_result_list):
+        no_candidates = len(env_result_list.keys())
+        no_buckets = no_candidates -1
+        alpha_risk = np.ones(no_buckets)
+        total_votes = list(env_result_list.values())
+        difference = [(total_votes[i-1] - total_votes[i]) for i in range(1,no_candidates,1)]
+        self.total_risk = np.round(1/(1+np.sum(np.array(difference)*alpha_risk)/no_buckets),3)
+        print(f"[DEBUG]-[Env] calculate_risk total_votes:{total_votes}")
+        return self.total_risk
 
 if __name__ == "__main__":
     # env_vote_scheme = 'borda'
@@ -112,3 +123,6 @@ if __name__ == "__main__":
 
     env.cal_total_happiness(env_final_result_list)
     print(f"Final Total Happiness: {env.total_happiness}")
+
+    risk = env.calculate_risk(env_init_result)
+    print(f"Final Total Risk: {risk}")
