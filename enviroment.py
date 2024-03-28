@@ -26,6 +26,7 @@ class Environment:
         self.agent_votes = {}
         self.total_happiness = 0
         self.total_risk = 0
+        self.avg_happiness = 0
         
         # create and define agents
         for i in range(num_agents):
@@ -70,7 +71,10 @@ class Environment:
         for a in self.agents:
             hap_init = cal_happiness(env_result_list, self.agent_prefs[a.name], self.happiness_type)
             self.total_happiness += hap_init
-        return self.total_happiness
+        self.avg_happiness = round(self.total_happiness/len(self.agents), 2)
+
+        return self.total_happiness, self.avg_happiness
+
     
     def calculate_risk(self,env_result_list):
         no_candidates = len(env_result_list.keys())
@@ -126,7 +130,7 @@ if __name__ == "__main__":
     print(f"Final voting result Dict: {env_final_result}")
 
     env.cal_total_happiness(env_final_result_list)
-    print(f"Final Total Happiness: {env.total_happiness}")
+    print(f"Final Total Happiness: {env.total_happiness}, Avg. happiness : {env.avg_happiness}")
 
     risk = env.calculate_final_risk()
     print(f"Final Total Risk: {risk}")
