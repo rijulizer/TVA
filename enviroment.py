@@ -25,6 +25,7 @@ class Environment:
         self.agent_prefs = {}
         self.agent_votes = {}
         self.total_happiness = 0
+        self.avg_happiness = 0
         
         # create and define agents
         for i in range(num_agents):
@@ -69,7 +70,9 @@ class Environment:
         for a in self.agents:
             hap_init = cal_happiness(env_result_list, self.agent_prefs[a.name], self.happiness_type)
             self.total_happiness += hap_init
-        return self.total_happiness
+        self.avg_happiness = round(self.total_happiness/len(self.agents), 2)
+
+        return self.total_happiness, self.avg_happiness
 
 if __name__ == "__main__":
     # env_vote_scheme = 'borda'
@@ -111,4 +114,4 @@ if __name__ == "__main__":
     print(f"Final voting result Dict: {env_final_result}")
 
     env.cal_total_happiness(env_final_result_list)
-    print(f"Fianl Total Happiness: {env.total_happiness}")
+    print(f"Fianl Total Happiness: {env.total_happiness}, Avg. happiness : {env.avg_happiness}")
