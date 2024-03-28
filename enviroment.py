@@ -25,6 +25,7 @@ class Environment:
         self.agent_prefs = {}
         self.agent_votes = {}
         self.total_happiness = 0
+        self.total_risk = 0
         self.avg_happiness = 0
         
         # create and define agents
@@ -64,7 +65,7 @@ class Environment:
         print(f"[DEBUG]-[Env], votes: {self.agent_votes} \n")
    
     def cal_total_happiness(self, env_result_list):
-        """Calculates the total hapiness of the system
+        """Calculates the total happiness of the system
         """
         self.total_happiness = 0
         for a in self.agents:
@@ -73,6 +74,20 @@ class Environment:
         self.avg_happiness = round(self.total_happiness/len(self.agents), 2)
 
         return self.total_happiness, self.avg_happiness
+
+    def calculate_risk(self,env_result_list):
+        no_candidates = len(env_result_list.keys())
+        no_buckets = no_candidates -1
+        alpha_risk = np.ones(no_buckets)
+        total_votes = list(env_result_list.values())
+        difference = [(total_votes[i-1] - total_votes[i]) for i in range(1,no_candidates,1)]
+        self.total_risk = np.round(1/(1+np.sum(np.array(difference)*alpha_risk)/no_buckets),3)
+        print(f"[DEBUG]-[Env] calculate_risk total_votes:{total_votes}")
+        return self.total_risk
+    
+    def calculate_final_risk(self):
+        env_final_result, _ = cal_result(self.env_candidates, self.agent_votes)
+        return self.calculate_risk(env_final_result)
 
 if __name__ == "__main__":
     # env_vote_scheme = 'borda'
@@ -114,4 +129,7 @@ if __name__ == "__main__":
     print(f"Final voting result Dict: {env_final_result}")
 
     env.cal_total_happiness(env_final_result_list)
-    print(f"Fianl Total Happiness: {env.total_happiness}, Avg. happiness : {env.avg_happiness}")
+    print(f"Final Total Happiness: {env.total_happiness}, Avg. happiness : {env.avg_happiness}")
+
+    risk = env.calculate_final_risk()
+    print(f"Final Total Risk: {risk}")
