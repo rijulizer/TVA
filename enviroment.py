@@ -75,7 +75,6 @@ class Environment:
 
         return self.total_happiness, self.avg_happiness
 
-    
     def calculate_risk(self,env_result_list):
         no_candidates = len(env_result_list.keys())
         no_buckets = no_candidates -1

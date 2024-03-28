@@ -1,0 +1,41 @@
+Result: ['c1', 'c2', 'c3', 'c4']
+Preference: ['c4', 'c2', 'c1', 'c3']
+The distances: [3, 0, 2, 1]
+
+
+Result: ['c1', 'c2', 'c3', 'c4']
+Preference: ['c4', 'c3', 'c2', 'c1']
+The distances: [3, 1, 1, 3]
+
+
+Result: ['c1', 'c2', 'c3', 'c4']
+Preference: ['c2', 'c1', 'c4', 'c3']
+The distances: [1, 1, 1, 1]
+
+The maximum individual distance is (n-1)
+
+
+
+test_max_distance()        
+length: 1, max_distance_sum: 0
+length: 2, max_distance_sum: 2
+length: 3, max_distance_sum: 4
+length: 4, max_distance_sum: 8
+length: 5, max_distance_sum: 12
+length: 6, max_distance_sum: 18
+length: 7, max_distance_sum: 24
+length: 8, max_distance_sum: 32
+length: 9, max_distance_sum: 40
+
+# maximum distance test_max_distance[0] 0
+[1] 2
+[0, 2] 4
+[1, 3] 8
+[0, 2, 4] 12
+[1, 3, 5] 18
+[0, 2, 4, 6] 24
+[1, 3, 5, 7] 32
+[0, 2, 4, 6, 8] 40
+[1, 3, 5, 7, 9] 50
+number of candidates: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+maximum_distances: [0, 2, 4, 8, 12, 18, 24, 32, 40, 50]
