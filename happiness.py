@@ -53,7 +53,7 @@ def max_disatance_sum(num_candidates: int):
     
     # the number repeats twice
     dist_sum*=2
-    print(dist,dist_sum)
+    # print(dist,dist_sum)
     return dist_sum
 
 def cal_happiness(env_result: list, pref: list, type: str = 'A'):
