@@ -1,5 +1,6 @@
 import numpy as np
-from utils import voting_scheme, cal_happiness, map_vote, cal_result
+from utils import voting_scheme, map_vote, cal_result
+from happiness import cal_happiness
 from pprint import pprint
 from itertools import combinations, permutations
 class Agent:
@@ -127,8 +128,7 @@ class Agent:
                         max_hap = happiness
                         best_pref = list(comb)
                         best_vote = map_vote(env_vote_scheme, env_candidates, list(comb), bullet_voting)
-                        print(f"[Debug]-[set_vote]- max_hap: {max_hap}, best_pref: {best_pref}, best_vote: {best_vote}\n")
-                        
+                print(f"[Debug]-[set_vote]- max_hap: {max_hap}, best_pref: {best_pref}, best_vote: {best_vote}\n")   
                 self.final_vote = best_vote
                 self.best_pref = best_pref
                         
@@ -155,6 +155,7 @@ class Agent:
                 raise NotImplementedError("Strategist doesnt use a valid strategy")
 
             print(f"[Debug]-[set_vote]- strategic_voted: {strategic_voted}\n")
+
 
 if __name__ == "__main__":
     # Test create agent 
