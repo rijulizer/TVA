@@ -17,6 +17,8 @@ class Environment:
         num_strat_agents : int = 1,
         ):
         
+        print(f"Creating Enviroment: {randomname.get_name()} \n")
+        
         self.env_candidates = env_candidates
         self.env_vote_scheme = env_vote_scheme 
         self.agent_vote_strategy = agent_vote_strategy
@@ -95,7 +97,14 @@ class Environment:
 
     def run_tva(self):
         """runs a round of voting
+            Step-0: Create environment
+            Step-1: Get all agents preferences and votes
+            Step-2: Calculate inital result
+            Step-3: Stategic agent sets votes
+            step-4: Calculate final result
+        
         """
+        
         print(f"[Debug]-[run_tva]-Runing a voting process... \n")
         # Collect initial preferences and votes 
         self.collect_prefs_and_votes()
@@ -203,9 +212,7 @@ if __name__ == "__main__":
     num_strat_agents = args.num_strat_agents
     print("#"*100)
     print("#"*100)
-    print(f"Creating Enviroment: {randomname.get_name()} \n")
-    print(f"Params:",env_candidates, type(env_candidates), len(env_candidates),  env_vote_scheme, agent_vote_strategy, happiness_type, num_agents, num_strat_agents,"\n")
-    print("#"*100)
+    print(f"Params:, \ncandidates: {env_candidates}, \nvoting scheme: {env_vote_scheme},\nagent_vote_strategy: {agent_vote_strategy},\nhappiness_type: {happiness_type}, \nnum_agents: {num_agents}, \nnum_strat_agents: {num_strat_agents}")
     print("#"*100)
     env = Environment(
         env_candidates, 

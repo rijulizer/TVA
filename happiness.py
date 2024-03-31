@@ -112,11 +112,11 @@ def cal_happiness(env_result: list, pref: list, type: str = 'A'):
         raise NotImplementedError("Not a valid happiness function")
 
         
-    print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
-    print(f"[DEBUG]-[cal_happiness] scaled_distances: {scaled_distances}")
-    print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
-    print(f"[DEBUG]-[cal_happiness]- total_distance: {total_distance}")
-    print(f"[DEBUG]-[cal_happiness]- happiness: {happiness}")
+    # print(f"[DEBUG]-[cal_happiness] raw_distances: {raw_distances}")
+    # print(f"[DEBUG]-[cal_happiness] scaled_distances: {scaled_distances}")
+    # print(f"[DEBUG]-[cal_happiness]- alpha: {alpha}")
+    # print(f"[DEBUG]-[cal_happiness]- total_distance: {total_distance}")
+    # print(f"[DEBUG]-[cal_happiness]- happiness: {happiness}")
     
     return happiness
 
