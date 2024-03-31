@@ -11,6 +11,9 @@ class Experiment:
         
         self.id = id
         self.name = name
+        self.init_total_happiness = 0
+        self.final_total_happiness = 0
+        self.final_total_risk = 0
         print(f"exp_id: {self.id}, exp_name: {self.name}")
 
     def set_exp_variables(
@@ -58,12 +61,13 @@ class Experiment:
         env.collect_prefs_and_votes()
         # calculate initial result
         env_init_result, env_init_result_list = cal_result(env.env_candidates, env.agent_votes)
-        print(f"Inital voting result Dict: {env_init_result}")
+        print(f"Initial voting result Dict: {env_init_result}")
 
         # initial happiness
         env.cal_total_happiness(env_init_result_list)
         print(f"Initial Total Happiness: {env.total_happiness}")
-
+        self.init_total_happiness = env.total_happiness
+        print(f"[Debug]-[Exp]- init_total_happiness: {self.init_total_happiness}")
 
         # Set the vote for the strategic agent
         # # Set the vote for the strategic agent
@@ -85,7 +89,14 @@ class Experiment:
         print(f"Final voting result Dict: {env_final_result}")
 
         env.cal_total_happiness(env_final_result_list)
-        print(f"Fianl Total Happiness: {env.total_happiness}")
+        print(f"Final Total Happiness: {env.total_happiness}")
+        self.final_total_happiness = env.total_happiness
+        print(f"[Debug]-[Exp]- final_total_happiness: {self.final_total_happiness}")
+
+        self.final_total_risk = env.calculate_risk(env_init_result)
+        print(f"[Debug]-[Exp]- final_total_risk: {self.final_total_risk}")
+
+        return self.init_total_happiness, self.final_total_happiness,self.final_total_risk
 
 if __name__ == "__main__":
     
