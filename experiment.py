@@ -111,6 +111,6 @@ if __name__ == "__main__":
             voting_strategies=['compromising', 'bullet_voting', 'combination'],
             hapiness_types=['A', 'B', 'C'],
             num_agents=5,
-            num_strat_agents=1,
+            num_strat_agents=2,
     )
         

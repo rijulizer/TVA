@@ -16,8 +16,10 @@ class Environment:
         num_agents : int = 5, 
         num_strat_agents : int = 1,
         ):
-        
-        print(f"Creating Enviroment: {randomname.get_name()} \n")
+        print("\n\n")
+        print("#"*100)
+        print("#"*100)
+        print(f"Creating Enviroment: {randomname.get_name()}")
         
         self.env_candidates = env_candidates
         self.env_vote_scheme = env_vote_scheme 
@@ -32,6 +34,10 @@ class Environment:
         self.total_happiness = 0
         self.total_risk = 0
         self.avg_happiness = 0
+
+        
+        print(f"[Env]-[Params]:, \ncandidates: {env_candidates}, \nvoting scheme: {env_vote_scheme},\nagent_vote_strategy: {agent_vote_strategy},\nhappiness_type: {happiness_type}, \nnum_agents: {num_agents}, \nnum_strat_agents: {num_strat_agents}")
+        print("#"*100)
         
         # create and define agents
         for i in range(num_agents):
@@ -47,6 +53,8 @@ class Environment:
         for agent in self.agents: # DEBUG
             if agent.strategy:
                 print(f"[DEBUG]-[Env]- Agent: {agent.name}, strategic_agent: {agent.strategy}, preference: {agent.real_preference}\n")
+
+        
         
     def collect_prefs_and_votes(self):
         """
@@ -136,16 +144,17 @@ class Environment:
                     freeze_init_prefs,
                     freeze_init_votes,
                 )
-            # [Debug] The next section is only needed for debugging
-            # collect votes and preferences, after each startegic voter this modifes the agent votes 
-            self.collect_prefs_and_votes()
-            # calculate intermediate result
-            env_intm_result, env_intm_result_list = cal_result(self.env_candidates, self.agent_votes)
-            print(f"Intermediate voting result Dict: {env_intm_result}")
-            self.cal_total_happiness(env_intm_result_list)
-            print(f"Intermediate Total Happiness: {self.total_happiness} \n")
-            # agent_happiness = cal_happiness(env_intm_result_list, env.agents[i].real_preference, self.happiness_type)
-            print("*"*100)
+            if self.num_strat_agents >=2:
+                # [Debug] The next section is only needed for debugging
+                # collect votes and preferences, after each startegic voter this modifes the agent votes 
+                self.collect_prefs_and_votes()
+                # calculate intermediate result
+                env_intm_result, env_intm_result_list = cal_result(self.env_candidates, self.agent_votes)
+                print(f"Intermediate voting result Dict: {env_intm_result}")
+                self.cal_total_happiness(env_intm_result_list)
+                print(f"Intermediate Total Happiness: {self.total_happiness} \n")
+                # agent_happiness = cal_happiness(env_intm_result_list, env.agents[i].real_preference, self.happiness_type)
+                print("*"*100)
 
         # Final calculations
         print("*"*100)
@@ -158,6 +167,11 @@ class Environment:
 
         self.cal_total_happiness(env_final_result_list)
         print(f"Fianl Total Happiness: {self.total_happiness}")
+        
+        # Calcualte risk
+        final_total_risk = self.calculate_final_risk()
+        print(f"Fianl Total Risk: {final_total_risk}")
+
 
 if __name__ == "__main__":
     
@@ -210,10 +224,6 @@ if __name__ == "__main__":
     happiness_type = args.happiness_type
     num_agents = args.num_agents
     num_strat_agents = args.num_strat_agents
-    print("#"*100)
-    print("#"*100)
-    print(f"Params:, \ncandidates: {env_candidates}, \nvoting scheme: {env_vote_scheme},\nagent_vote_strategy: {agent_vote_strategy},\nhappiness_type: {happiness_type}, \nnum_agents: {num_agents}, \nnum_strat_agents: {num_strat_agents}")
-    print("#"*100)
     env = Environment(
         env_candidates, 
         env_vote_scheme, 

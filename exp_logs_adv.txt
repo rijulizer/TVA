@@ -1,0 +1,2876 @@
+exp_id: 0, exp_name: first_experiment
+Params:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting schemes: ['plurality', 'anti_plurality', 'voting_for_two', 'borda'],
+voting_strategies: ['compromising', 'bullet_voting', 'combination'],
+hapiness_types: ['A', 'B', 'C'], 
+num_agents: 5, 
+num_strat_agents: 2
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: dry-tessellation
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: compromising,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c4', 'c2', 'c1', 'c0', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c3', 'c2', 'c1', 'c0', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 1]),
+ 'agent_1': array([0, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Inital voting result Dict: {'c3': 2, 'c4': 2, 'c0': 1, 'c1': 0, 'c2': 0} 
+
+Initial Total Happiness: 1.5019999999999996 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.16799999999999993
+[Debug]-[set_vote]- max_hap: 0.16799999999999993, best_pref: ['c4', 'c2', 'c1', 'c0', 'c3'], best_vote: [0 0 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 1]),
+ 'agent_1': array([0, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c3': 2, 'c4': 2, 'c0': 1, 'c1': 0, 'c2': 0}
+Intermediate Total Happiness: 1.5019999999999996 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.33399999999999996
+[Debug]-[set_vote]- max_hap: 0.5, best_pref: ['c2', 'c3', 'c1', 'c0', 'c4'], best_vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 1]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c4': 2, 'c0': 1, 'c2': 1, 'c3': 1, 'c1': 0}
+Intermediate Total Happiness: 1.6679999999999997 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 1]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Final voting result Dict: {'c4': 2, 'c0': 1, 'c2': 1, 'c3': 1, 'c1': 0}
+Fianl Total Happiness: 1.6679999999999997
+[DEBUG]-[Env] calculate_risk total_votes:[2, 1, 1, 1, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: grave-sandwich
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: compromising,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c2', 'c1', 'c0', 'c3', 'c4']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c3', 'c0', 'c1', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Inital voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0} 
+
+Initial Total Happiness: 2.141 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.6679999999999999
+[Debug]-[set_vote]- max_hap: 0.6679999999999999, best_pref: ['c2', 'c1', 'c0', 'c3', 'c4'], best_vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0}
+Intermediate Total Happiness: 2.141 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.44499999999999995
+[Debug]-[set_vote]- max_hap: 0.44499999999999995, best_pref: ['c2', 'c3', 'c0', 'c1', 'c4'], best_vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0}
+Intermediate Total Happiness: 2.141 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Final voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0}
+Fianl Total Happiness: 2.141
+[DEBUG]-[Env] calculate_risk total_votes:[2, 2, 1, 0, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: pureed-strata
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: compromising,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c3', 'c1', 'c0', 'c2', 'c4']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c2', 'c0', 'c3', 'c1']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 1, 0]),
+ 'agent_1': array([0, 0, 0, 0, 1]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Inital voting result Dict: {'c3': 2, 'c0': 1, 'c1': 1, 'c4': 1, 'c2': 0} 
+
+Initial Total Happiness: 2.125 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c3', 'c1', 'c0', 'c2', 'c4'], best_vote: [0 0 0 1 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 1, 0]),
+ 'agent_1': array([0, 0, 0, 0, 1]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c3': 2, 'c0': 1, 'c1': 1, 'c4': 1, 'c2': 0}
+Intermediate Total Happiness: 2.125 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.125
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c4', 'c2', 'c0', 'c3', 'c1'], best_vote: [0 0 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 1, 0]),
+ 'agent_1': array([0, 0, 0, 0, 1]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c3': 2, 'c0': 1, 'c1': 1, 'c4': 1, 'c2': 0}
+Intermediate Total Happiness: 2.125 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 1, 0]),
+ 'agent_1': array([0, 0, 0, 0, 1]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Final voting result Dict: {'c3': 2, 'c0': 1, 'c1': 1, 'c4': 1, 'c2': 0}
+Fianl Total Happiness: 2.125
+[DEBUG]-[Env] calculate_risk total_votes:[2, 1, 1, 1, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: quantum-availability
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: bullet_voting,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c4', 'c0', 'c3', 'c2']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c2', 'c3', 'c4', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 1, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Inital voting result Dict: {'c1': 2, 'c2': 2, 'c3': 1, 'c0': 0, 'c4': 0} 
+
+Initial Total Happiness: 2.0009999999999994 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c4', 'c0', 'c3', 'c2'], voting_output: {'c1': 2, 'c2': 2, 'c3': 1, 'c0': 0, 'c4': 0}, happiness: 0.33399999999999996, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 1, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c1': 2, 'c2': 2, 'c3': 1, 'c0': 0, 'c4': 0}
+Intermediate Total Happiness: 2.0009999999999994 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c2', 'c3', 'c4', 'c0'], voting_output: {'c1': 2, 'c2': 2, 'c3': 1, 'c0': 0, 'c4': 0}, happiness: 0.834, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 1, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c1': 2, 'c2': 2, 'c3': 1, 'c0': 0, 'c4': 0}
+Intermediate Total Happiness: 2.0009999999999994 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 1, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 0])}
+Final voting result Dict: {'c1': 2, 'c2': 2, 'c3': 1, 'c0': 0, 'c4': 0}
+Fianl Total Happiness: 2.0009999999999994
+[DEBUG]-[Env] calculate_risk total_votes:[2, 2, 1, 0, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: raw-router
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: bullet_voting,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c3', 'c4', 'c0', 'c2']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c2', 'c0', 'c3', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Inital voting result Dict: {'c1': 3, 'c2': 1, 'c4': 1, 'c0': 0, 'c3': 0} 
+
+Initial Total Happiness: 2.5829999999999997 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c3', 'c4', 'c0', 'c2'], voting_output: {'c1': 3, 'c2': 1, 'c4': 1, 'c0': 0, 'c3': 0}, happiness: 0.583, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Intermediate voting result Dict: {'c1': 3, 'c2': 1, 'c4': 1, 'c0': 0, 'c3': 0}
+Intermediate Total Happiness: 2.5829999999999997 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c2', 'c0', 'c3', 'c4'], voting_output: {'c1': 3, 'c2': 1, 'c4': 1, 'c0': 0, 'c3': 0}, happiness: 0.806, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Intermediate voting result Dict: {'c1': 3, 'c2': 1, 'c4': 1, 'c0': 0, 'c3': 0}
+Intermediate Total Happiness: 2.5829999999999997 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Final voting result Dict: {'c1': 3, 'c2': 1, 'c4': 1, 'c0': 0, 'c3': 0}
+Fianl Total Happiness: 2.5829999999999997
+[DEBUG]-[Env] calculate_risk total_votes:[3, 1, 1, 0, 0]
+Fianl Total Risk: 0.571
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: tense-poset
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: bullet_voting,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c2', 'c0', 'c3', 'c4']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c4', 'c1', 'c3', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Inital voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c3': 1, 'c4': 0} 
+
+Initial Total Happiness: 2.5 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c2', 'c0', 'c3', 'c4'], voting_output: {'c0': 2, 'c1': 1, 'c2': 1, 'c3': 1, 'c4': 0}, happiness: 0.25, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Intermediate voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c3': 1, 'c4': 0}
+Intermediate Total Happiness: 2.5 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c2', 'c4', 'c1', 'c3', 'c0'], voting_output: {'c0': 2, 'c1': 1, 'c2': 1, 'c3': 1, 'c4': 0}, happiness: 0, bullet vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Intermediate voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c3': 1, 'c4': 0}
+Intermediate Total Happiness: 2.5 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Final voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c3': 1, 'c4': 0}
+Fianl Total Happiness: 2.5
+[DEBUG]-[Env] calculate_risk total_votes:[2, 1, 1, 1, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: excited-finger
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: combination,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c2', 'c1', 'c3', 'c0', 'c4']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c4', 'c1', 'c3', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Inital voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0} 
+
+Initial Total Happiness: 1.834 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5
+[Debug]-[set_vote]- max_hap: 0.5, best_pref: ['c2', 'c1', 'c3', 'c0', 'c4'], best_vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0}
+Intermediate Total Happiness: 1.834 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.834
+[Debug]-[set_vote]- max_hap: 0.834, best_pref: ['c2', 'c4', 'c1', 'c3', 'c0'], best_vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0}
+Intermediate Total Happiness: 1.834 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 0, 1])}
+Final voting result Dict: {'c2': 2, 'c4': 2, 'c1': 1, 'c0': 0, 'c3': 0}
+Fianl Total Happiness: 1.834
+[DEBUG]-[Env] calculate_risk total_votes:[2, 2, 1, 0, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: crabby-decision
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: combination,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c0', 'c2', 'c1', 'c4', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c0', 'c1', 'c2', 'c3', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Inital voting result Dict: {'c0': 4, 'c2': 1, 'c1': 0, 'c3': 0, 'c4': 0} 
+
+Initial Total Happiness: 3.447 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.917
+[Debug]-[set_vote]- max_hap: 0.917, best_pref: ['c0', 'c2', 'c1', 'c4', 'c3'], best_vote: [1 0 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Intermediate voting result Dict: {'c0': 4, 'c2': 1, 'c1': 0, 'c3': 0, 'c4': 0}
+Intermediate Total Happiness: 3.447 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.806
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c1', 'c0', 'c2', 'c3', 'c4'], best_vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Intermediate voting result Dict: {'c0': 3, 'c1': 1, 'c2': 1, 'c3': 0, 'c4': 0}
+Intermediate Total Happiness: 3.278 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 0]),
+ 'agent_3': array([0, 0, 1, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 0])}
+Final voting result Dict: {'c0': 3, 'c1': 1, 'c2': 1, 'c3': 0, 'c4': 0}
+Fianl Total Happiness: 3.278
+[DEBUG]-[Env] calculate_risk total_votes:[3, 1, 1, 0, 0]
+Fianl Total Risk: 0.571
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: lazy-chord
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: plurality,
+agent_vote_strategy: combination,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c0', 'c1', 'c2', 'c3', 'c4']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c0', 'c1', 'c3', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([1, 0, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Inital voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c4': 1, 'c3': 0} 
+
+Initial Total Happiness: 2.625 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c0', 'c1', 'c2', 'c3', 'c4'], best_vote: [1 0 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([1, 0, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Intermediate voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c4': 1, 'c3': 0}
+Intermediate Total Happiness: 2.625 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5
+[Debug]-[set_vote]- max_hap: 0.5, best_pref: ['c2', 'c0', 'c1', 'c3', 'c4'], best_vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([1, 0, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Intermediate voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c4': 1, 'c3': 0}
+Intermediate Total Happiness: 2.625 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 0]),
+ 'agent_1': array([0, 0, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 0, 1]),
+ 'agent_3': array([1, 0, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 0, 0])}
+Final voting result Dict: {'c0': 2, 'c1': 1, 'c2': 1, 'c4': 1, 'c3': 0}
+Fianl Total Happiness: 2.625
+[DEBUG]-[Env] calculate_risk total_votes:[2, 1, 1, 1, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: weathered-haddock
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: compromising,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c2', 'c0', 'c3', 'c4', 'c1']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c1', 'c0', 'c3', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 1, 1, 1]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 0, 1, 1])}
+Inital voting result Dict: {'c4': 5, 'c0': 4, 'c1': 4, 'c3': 4, 'c2': 3} 
+
+Initial Total Happiness: 2.002 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.16699999999999993
+[Debug]-[set_vote]- max_hap: 0.33399999999999996, best_pref: ['c2', 'c0', 'c3', 'c1', 'c4'], best_vote: [1 1 1 1 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 1, 0]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 0, 1, 1])}
+Intermediate voting result Dict: {'c1': 5, 'c0': 4, 'c3': 4, 'c4': 4, 'c2': 3}
+Intermediate Total Happiness: 1.6679999999999997 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.834
+[Debug]-[set_vote]- max_hap: 0.834, best_pref: ['c4', 'c1', 'c0', 'c3', 'c2'], best_vote: [1 1 0 1 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 1, 0]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 0, 1, 1])}
+Intermediate voting result Dict: {'c1': 5, 'c0': 4, 'c3': 4, 'c4': 4, 'c2': 3}
+Intermediate Total Happiness: 1.6679999999999997 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 1, 0]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 0, 1, 1])}
+Final voting result Dict: {'c1': 5, 'c0': 4, 'c3': 4, 'c4': 4, 'c2': 3}
+Fianl Total Happiness: 1.6679999999999997
+[DEBUG]-[Env] calculate_risk total_votes:[5, 4, 4, 4, 3]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: pink-tundra
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: compromising,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c2', 'c4', 'c0', 'c3', 'c1']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c3', 'c0', 'c4', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 1, 1, 1]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Inital voting result Dict: {'c0': 5, 'c3': 5, 'c2': 4, 'c1': 3, 'c4': 3} 
+
+Initial Total Happiness: 2.249 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.08199999999999996
+[Debug]-[set_vote]- max_hap: 0.138, best_pref: ['c2', 'c4', 'c0', 'c1', 'c3'], best_vote: [1 1 1 0 1]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Intermediate voting result Dict: {'c0': 5, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 3}
+Intermediate Total Happiness: 2.027 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.30500000000000005
+[Debug]-[set_vote]- max_hap: 0.41700000000000004, best_pref: ['c1', 'c3', 'c4', 'c2', 'c0'], best_vote: [0 1 1 1 1]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([0, 1, 1, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Intermediate voting result Dict: {'c2': 5, 'c0': 4, 'c1': 4, 'c3': 4, 'c4': 3}
+Intermediate Total Happiness: 1.7489999999999999 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([0, 1, 1, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Final voting result Dict: {'c2': 5, 'c0': 4, 'c1': 4, 'c3': 4, 'c4': 3}
+Fianl Total Happiness: 1.7489999999999999
+[DEBUG]-[Env] calculate_risk total_votes:[5, 4, 4, 4, 3]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: cream-vision
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: compromising,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c2', 'c0', 'c1', 'c4', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c3', 'c1', 'c0', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([1, 1, 1, 1, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Inital voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4} 
+
+Initial Total Happiness: 2.125 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5
+[Debug]-[set_vote]- max_hap: 0.5, best_pref: ['c2', 'c0', 'c1', 'c4', 'c3'], best_vote: [1 1 1 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([1, 1, 1, 1, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Intermediate voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4}
+Intermediate Total Happiness: 2.125 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.125
+[Debug]-[set_vote]- max_hap: 0.125, best_pref: ['c2', 'c3', 'c1', 'c0', 'c4'], best_vote: [1 1 1 1 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([1, 1, 1, 1, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Intermediate voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4}
+Intermediate Total Happiness: 2.125 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([1, 1, 1, 1, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Final voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4}
+Fianl Total Happiness: 2.125
+[DEBUG]-[Env] calculate_risk total_votes:[4, 4, 4, 4, 4]
+Fianl Total Risk: 1.0
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: alternating-banylus
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: bullet_voting,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c2', 'c0', 'c4', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c3', 'c4', 'c2', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([0, 1, 1, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Inital voting result Dict: {'c2': 5, 'c4': 5, 'c0': 4, 'c1': 3, 'c3': 3} 
+
+Initial Total Happiness: 2.003 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c2', 'c0', 'c4', 'c3'], voting_output: {'c2': 4, 'c4': 4, 'c0': 3, 'c1': 3, 'c3': 3}, happiness: 0.5, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([0, 1, 1, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Intermediate voting result Dict: {'c2': 5, 'c4': 5, 'c0': 4, 'c1': 3, 'c3': 3}
+Intermediate Total Happiness: 2.003 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c3', 'c4', 'c2', 'c0'], voting_output: {'c0': 3, 'c1': 3, 'c2': 3, 'c4': 3, 'c3': 2}, happiness: 0.16799999999999993, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Intermediate voting result Dict: {'c0': 4, 'c2': 4, 'c4': 4, 'c1': 3, 'c3': 2}
+Intermediate Total Happiness: 1.6689999999999998 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Final voting result Dict: {'c0': 4, 'c2': 4, 'c4': 4, 'c1': 3, 'c3': 2}
+Fianl Total Happiness: 1.6689999999999998
+[DEBUG]-[Env] calculate_risk total_votes:[4, 4, 4, 3, 2]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: stubborn-interval
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: bullet_voting,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c0', 'c2', 'c4', 'c3', 'c1']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c3', 'c2', 'c0', 'c4', 'c1']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 1, 1, 1]),
+ 'agent_1': array([1, 0, 1, 1, 1]),
+ 'agent_2': array([1, 1, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Inital voting result Dict: {'c0': 5, 'c2': 4, 'c3': 4, 'c4': 4, 'c1': 3} 
+
+Initial Total Happiness: 1.971 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c0', 'c2', 'c4', 'c3', 'c1'], voting_output: {'c0': 5, 'c1': 3, 'c2': 3, 'c3': 3, 'c4': 3}, happiness: 0.639, bullet vote: [1 0 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 1, 1, 1]),
+ 'agent_1': array([1, 0, 1, 1, 1]),
+ 'agent_2': array([1, 1, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Intermediate voting result Dict: {'c0': 5, 'c2': 4, 'c3': 4, 'c4': 4, 'c1': 3}
+Intermediate Total Happiness: 1.971 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c3', 'c2', 'c0', 'c4', 'c1'], voting_output: {'c0': 4, 'c1': 3, 'c3': 3, 'c2': 2, 'c4': 2}, happiness: 0.19299999999999995, bullet vote: [0 0 0 1 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 1, 1, 1]),
+ 'agent_1': array([1, 0, 1, 1, 1]),
+ 'agent_2': array([1, 1, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Intermediate voting result Dict: {'c0': 5, 'c2': 4, 'c3': 4, 'c4': 4, 'c1': 3}
+Intermediate Total Happiness: 1.971 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 1, 1, 1]),
+ 'agent_1': array([1, 0, 1, 1, 1]),
+ 'agent_2': array([1, 1, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Final voting result Dict: {'c0': 5, 'c2': 4, 'c3': 4, 'c4': 4, 'c1': 3}
+Fianl Total Happiness: 1.971
+[DEBUG]-[Env] calculate_risk total_votes:[5, 4, 4, 4, 3]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: eager-watt
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: bullet_voting,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c2', 'c4', 'c3', 'c0']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c2', 'c1', 'c0', 'c3']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 1, 1]),
+ 'agent_1': array([1, 1, 1, 0, 1]),
+ 'agent_2': array([1, 1, 0, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Inital voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4} 
+
+Initial Total Happiness: 2.625 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c2', 'c4', 'c3', 'c0'], voting_output: {'c0': 4, 'c1': 4, 'c2': 3, 'c3': 3, 'c4': 3}, happiness: 0, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 1, 1]),
+ 'agent_1': array([1, 1, 1, 0, 1]),
+ 'agent_2': array([1, 1, 0, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Intermediate voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4}
+Intermediate Total Happiness: 2.625 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c4', 'c2', 'c1', 'c0', 'c3'], voting_output: {'c0': 3, 'c1': 3, 'c3': 3, 'c4': 3, 'c2': 2}, happiness: 0.125, bullet vote: [0 0 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 1, 1]),
+ 'agent_1': array([1, 1, 1, 0, 1]),
+ 'agent_2': array([1, 1, 0, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Intermediate voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4}
+Intermediate Total Happiness: 2.625 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 1, 1]),
+ 'agent_1': array([1, 1, 1, 0, 1]),
+ 'agent_2': array([1, 1, 0, 1, 1]),
+ 'agent_3': array([1, 1, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 1, 1])}
+Final voting result Dict: {'c0': 4, 'c1': 4, 'c2': 4, 'c3': 4, 'c4': 4}
+Fianl Total Happiness: 2.625
+[DEBUG]-[Env] calculate_risk total_votes:[4, 4, 4, 4, 4]
+Fianl Total Risk: 1.0
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: product-rhea
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: combination,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c2', 'c0', 'c3', 'c4']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c1', 'c2', 'c0', 'c3']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 1, 1, 0]),
+ 'agent_1': array([1, 1, 1, 0, 1]),
+ 'agent_2': array([1, 1, 1, 0, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([0, 1, 1, 1, 1])}
+Inital voting result Dict: {'c1': 5, 'c0': 4, 'c2': 4, 'c4': 4, 'c3': 3} 
+
+Initial Total Happiness: 2.1679999999999997 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.6679999999999999
+[Debug]-[set_vote]- max_hap: 0.6679999999999999, best_pref: ['c1', 'c2', 'c0', 'c3', 'c4'], best_vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 1, 1, 0, 1]),
+ 'agent_2': array([1, 1, 1, 0, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([0, 1, 1, 1, 1])}
+Intermediate voting result Dict: {'c1': 5, 'c4': 4, 'c0': 3, 'c2': 3, 'c3': 2}
+Intermediate Total Happiness: 2.335 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5
+[Debug]-[set_vote]- max_hap: 0.6679999999999999, best_pref: ['c1', 'c2', 'c0', 'c3', 'c4'], best_vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([1, 1, 1, 0, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([0, 1, 1, 1, 1])}
+Intermediate voting result Dict: {'c1': 5, 'c4': 3, 'c0': 2, 'c2': 2, 'c3': 2}
+Intermediate Total Happiness: 2.167 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([1, 1, 1, 0, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([0, 1, 1, 1, 1])}
+Final voting result Dict: {'c1': 5, 'c4': 3, 'c0': 2, 'c2': 2, 'c3': 2}
+Fianl Total Happiness: 2.167
+[DEBUG]-[Env] calculate_risk total_votes:[5, 3, 2, 2, 2]
+Fianl Total Risk: 0.571
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: poached-stage
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: combination,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c3', 'c0', 'c4', 'c1', 'c2']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c0', 'c3', 'c4', 'c1', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 0, 1, 1]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Inital voting result Dict: {'c0': 5, 'c4': 5, 'c1': 4, 'c2': 3, 'c3': 3} 
+
+Initial Total Happiness: 1.557 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.16800000000000004
+[Debug]-[set_vote]- max_hap: 0.16800000000000004, best_pref: ['c3', 'c0', 'c4', 'c1', 'c2'], best_vote: [0 0 0 1 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 1, 0]),
+ 'agent_1': array([1, 1, 0, 1, 1]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Intermediate voting result Dict: {'c0': 4, 'c4': 4, 'c1': 3, 'c2': 3, 'c3': 3}
+Intermediate Total Happiness: 1.557 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.501
+[Debug]-[set_vote]- max_hap: 0.6679999999999999, best_pref: ['c3', 'c4', 'c1', 'c2', 'c0'], best_vote: [0 0 0 1 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 1, 0]),
+ 'agent_1': array([0, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Intermediate voting result Dict: {'c0': 3, 'c2': 3, 'c3': 3, 'c4': 3, 'c1': 2}
+Intermediate Total Happiness: 1.443 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 1, 0]),
+ 'agent_1': array([0, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 1, 1, 1]),
+ 'agent_3': array([1, 1, 1, 0, 1]),
+ 'agent_4': array([1, 1, 1, 0, 1])}
+Final voting result Dict: {'c0': 3, 'c2': 3, 'c3': 3, 'c4': 3, 'c1': 2}
+Fianl Total Happiness: 1.443
+[DEBUG]-[Env] calculate_risk total_votes:[3, 3, 3, 3, 2]
+Fianl Total Risk: 0.8
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: acyclic-storyboard
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: anti_plurality,
+agent_vote_strategy: combination,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c3', 'c2', 'c4', 'c0']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c0', 'c2', 'c3', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 1, 1]),
+ 'agent_1': array([1, 1, 1, 1, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Inital voting result Dict: {'c1': 5, 'c3': 5, 'c2': 4, 'c0': 3, 'c4': 3} 
+
+Initial Total Happiness: 3.25 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c1', 'c3', 'c2', 'c4', 'c0'], best_vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 1, 1, 1, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Intermediate voting result Dict: {'c1': 5, 'c3': 4, 'c0': 3, 'c2': 3, 'c4': 2}
+Intermediate Total Happiness: 3.25 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c1', 'c0', 'c2', 'c3', 'c4'], best_vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Intermediate voting result Dict: {'c1': 5, 'c3': 3, 'c0': 2, 'c2': 2, 'c4': 2}
+Intermediate Total Happiness: 3.25 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 0]),
+ 'agent_2': array([0, 1, 1, 1, 1]),
+ 'agent_3': array([1, 1, 0, 1, 1]),
+ 'agent_4': array([1, 1, 1, 1, 0])}
+Final voting result Dict: {'c1': 5, 'c3': 3, 'c0': 2, 'c2': 2, 'c4': 2}
+Fianl Total Happiness: 3.25
+[DEBUG]-[Env] calculate_risk total_votes:[5, 3, 2, 2, 2]
+Fianl Total Risk: 0.571
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: acute-octree
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: compromising,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c0', 'c3', 'c4', 'c1', 'c2']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c1', 'c3', 'c0', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 1, 0]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 1, 0])}
+Inital voting result Dict: {'c1': 3, 'c3': 3, 'c0': 2, 'c2': 1, 'c4': 1} 
+
+Initial Total Happiness: 2.1689999999999996 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.33299999999999996
+[['c0', 'c3'], ['c0', 'c4'], ['c0', 'c1'], ['c0', 'c2'], ['c3', 'c4'], ['c3', 'c1'], ['c3', 'c2'], ['c4', 'c1'], ['c4', 'c2'], ['c1', 'c2']]
+[Debug]-[set_vote]- max_hap: 0.501, best_pref: ['c0', 'c4', 'c3', 'c1', 'c2'], best_vote: [1 0 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c1': 3, 'c0': 2, 'c3': 2, 'c4': 2, 'c2': 1}
+Intermediate Total Happiness: 2.334 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.33499999999999996
+[['c4', 'c1'], ['c4', 'c3'], ['c4', 'c0'], ['c4', 'c2'], ['c1', 'c3'], ['c1', 'c0'], ['c1', 'c2'], ['c3', 'c0'], ['c3', 'c2'], ['c0', 'c2']]
+[Debug]-[set_vote]- max_hap: 0.33499999999999996, best_pref: ['c4', 'c1', 'c3', 'c0', 'c2'], best_vote: [0 1 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 1, 0])}
+Intermediate voting result Dict: {'c1': 3, 'c0': 2, 'c3': 2, 'c4': 2, 'c2': 1}
+Intermediate Total Happiness: 2.334 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 0, 0, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 1, 0])}
+Final voting result Dict: {'c1': 3, 'c0': 2, 'c3': 2, 'c4': 2, 'c2': 1}
+Fianl Total Happiness: 2.334
+[DEBUG]-[Env] calculate_risk total_votes:[3, 2, 2, 2, 1]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: lively-suite
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: compromising,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c4', 'c2', 'c0', 'c3', 'c1']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c4', 'c0', 'c3', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 1, 0, 0])}
+Inital voting result Dict: {'c1': 4, 'c2': 3, 'c4': 2, 'c0': 1, 'c3': 0} 
+
+Initial Total Happiness: 2.864 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.472
+[['c4', 'c2'], ['c4', 'c0'], ['c4', 'c3'], ['c4', 'c1'], ['c2', 'c0'], ['c2', 'c3'], ['c2', 'c1'], ['c0', 'c3'], ['c0', 'c1'], ['c3', 'c1']]
+[Debug]-[set_vote]- max_hap: 0.472, best_pref: ['c4', 'c2', 'c0', 'c3', 'c1'], best_vote: [0 0 1 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 1, 0, 0])}
+Intermediate voting result Dict: {'c1': 4, 'c2': 3, 'c4': 2, 'c0': 1, 'c3': 0}
+Intermediate Total Happiness: 2.864 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.6679999999999999
+[['c1', 'c4'], ['c1', 'c0'], ['c1', 'c3'], ['c1', 'c2'], ['c4', 'c0'], ['c4', 'c3'], ['c4', 'c2'], ['c0', 'c3'], ['c0', 'c2'], ['c3', 'c2']]
+[Debug]-[set_vote]- max_hap: 0.6679999999999999, best_pref: ['c1', 'c4', 'c0', 'c3', 'c2'], best_vote: [0 1 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 1, 0, 0])}
+Intermediate voting result Dict: {'c1': 4, 'c2': 3, 'c4': 2, 'c0': 1, 'c3': 0}
+Intermediate Total Happiness: 2.864 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 1, 0, 0])}
+Final voting result Dict: {'c1': 4, 'c2': 3, 'c4': 2, 'c0': 1, 'c3': 0}
+Fianl Total Happiness: 2.864
+[DEBUG]-[Env] calculate_risk total_votes:[4, 3, 2, 1, 0]
+Fianl Total Risk: 0.5
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: similar-cabernet
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: compromising,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c4', 'c2', 'c3', 'c1', 'c0']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c4', 'c3', 'c2', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 0, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Inital voting result Dict: {'c4': 3, 'c0': 2, 'c1': 2, 'c2': 2, 'c3': 1} 
+
+Initial Total Happiness: 2.25 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[['c4', 'c2'], ['c4', 'c3'], ['c4', 'c1'], ['c4', 'c0'], ['c2', 'c3'], ['c2', 'c1'], ['c2', 'c0'], ['c3', 'c1'], ['c3', 'c0'], ['c1', 'c0']]
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c4', 'c2', 'c3', 'c1', 'c0'], best_vote: [0 0 1 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 0, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c4': 3, 'c0': 2, 'c1': 2, 'c2': 2, 'c3': 1}
+Intermediate Total Happiness: 2.25 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5
+[['c1', 'c4'], ['c1', 'c3'], ['c1', 'c2'], ['c1', 'c0'], ['c4', 'c3'], ['c4', 'c2'], ['c4', 'c0'], ['c3', 'c2'], ['c3', 'c0'], ['c2', 'c0']]
+[Debug]-[set_vote]- max_hap: 0.5, best_pref: ['c1', 'c4', 'c3', 'c2', 'c0'], best_vote: [0 1 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 0, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c4': 3, 'c0': 2, 'c1': 2, 'c2': 2, 'c3': 1}
+Intermediate Total Happiness: 2.25 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 0, 1, 1, 0]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Final voting result Dict: {'c4': 3, 'c0': 2, 'c1': 2, 'c2': 2, 'c3': 1}
+Fianl Total Happiness: 2.25
+[DEBUG]-[Env] calculate_risk total_votes:[3, 2, 2, 2, 1]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: young-distance
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: bullet_voting,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c2', 'c3', 'c4', 'c0', 'c1']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c0', 'c3', 'c4', 'c2', 'c1']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 1, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Inital voting result Dict: {'c0': 3, 'c3': 3, 'c4': 2, 'c1': 1, 'c2': 1} 
+
+Initial Total Happiness: 2.503 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c2', 'c3', 'c4', 'c0', 'c1'], voting_output: {'c0': 3, 'c3': 2, 'c4': 2, 'c1': 1, 'c2': 1}, happiness: 0.3340000000000001, bullet vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 1, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c0': 3, 'c3': 3, 'c4': 2, 'c1': 1, 'c2': 1}
+Intermediate Total Happiness: 2.503 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c0', 'c3', 'c4', 'c2', 'c1'], voting_output: {'c0': 3, 'c4': 2, 'c1': 1, 'c2': 1, 'c3': 1}, happiness: 0.5, bullet vote: [1 0 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 1, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c0': 3, 'c3': 3, 'c4': 2, 'c1': 1, 'c2': 1}
+Intermediate Total Happiness: 2.503 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 1, 1, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([0, 1, 0, 1, 0]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Final voting result Dict: {'c0': 3, 'c3': 3, 'c4': 2, 'c1': 1, 'c2': 1}
+Fianl Total Happiness: 2.503
+[DEBUG]-[Env] calculate_risk total_votes:[3, 3, 2, 1, 1]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: staccato-dolce
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: bullet_voting,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c2', 'c0', 'c4', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c1', 'c4', 'c3', 'c0', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Inital voting result Dict: {'c1': 3, 'c4': 3, 'c2': 2, 'c0': 1, 'c3': 1} 
+
+Initial Total Happiness: 2.6109999999999998 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c2', 'c0', 'c4', 'c3'], voting_output: {'c1': 3, 'c4': 3, 'c0': 1, 'c2': 1, 'c3': 1}, happiness: 0.6659999999999999, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Intermediate voting result Dict: {'c1': 3, 'c4': 3, 'c2': 2, 'c0': 1, 'c3': 1}
+Intermediate Total Happiness: 2.6109999999999998 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c4', 'c3', 'c0', 'c2'], voting_output: {'c1': 3, 'c4': 2, 'c0': 1, 'c2': 1, 'c3': 1}, happiness: 0.75, bullet vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Intermediate voting result Dict: {'c1': 3, 'c4': 3, 'c2': 2, 'c0': 1, 'c3': 1}
+Intermediate Total Happiness: 2.6109999999999998 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 0, 0]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 1, 1, 0, 0]),
+ 'agent_3': array([1, 0, 0, 0, 1]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Final voting result Dict: {'c1': 3, 'c4': 3, 'c2': 2, 'c0': 1, 'c3': 1}
+Fianl Total Happiness: 2.6109999999999998
+[DEBUG]-[Env] calculate_risk total_votes:[3, 3, 2, 1, 1]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: distinct-cash
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: bullet_voting,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c0', 'c1', 'c2', 'c4', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c1', 'c3', 'c0', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 1, 0, 0, 1]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Inital voting result Dict: {'c1': 3, 'c4': 3, 'c0': 2, 'c2': 1, 'c3': 1} 
+
+Initial Total Happiness: 1.5 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c0', 'c1', 'c2', 'c4', 'c3'], voting_output: {'c4': 3, 'c0': 2, 'c1': 2, 'c2': 1, 'c3': 1}, happiness: 0.125, bullet vote: [1 0 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 1, 0, 0, 1]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c1': 3, 'c4': 3, 'c0': 2, 'c2': 1, 'c3': 1}
+Intermediate Total Happiness: 1.5 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c2', 'c1', 'c3', 'c0', 'c4'], voting_output: {'c4': 3, 'c0': 2, 'c1': 1, 'c2': 1, 'c3': 1}, happiness: 0, bullet vote: [0 0 1 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 1, 0, 0, 1]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Intermediate voting result Dict: {'c1': 3, 'c4': 3, 'c0': 2, 'c2': 1, 'c3': 1}
+Intermediate Total Happiness: 1.5 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([1, 1, 0, 0, 0]),
+ 'agent_1': array([0, 1, 1, 0, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 1, 0, 0, 1]),
+ 'agent_4': array([1, 0, 0, 0, 1])}
+Final voting result Dict: {'c1': 3, 'c4': 3, 'c0': 2, 'c2': 1, 'c3': 1}
+Fianl Total Happiness: 1.5
+[DEBUG]-[Env] calculate_risk total_votes:[3, 3, 2, 1, 1]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: edible-condominium
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: combination,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c4', 'c1', 'c2', 'c3', 'c0']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c1', 'c2', 'c3', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 0, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 0, 0])}
+Inital voting result Dict: {'c4': 3, 'c1': 2, 'c2': 2, 'c3': 2, 'c0': 1} 
+
+Initial Total Happiness: 3.0 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[['c4', 'c1'], ['c4', 'c2'], ['c4', 'c3'], ['c4', 'c0'], ['c1', 'c2'], ['c1', 'c3'], ['c1', 'c0'], ['c2', 'c3'], ['c2', 'c0'], ['c3', 'c0']]
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c4', 'c1', 'c2', 'c3', 'c0'], best_vote: [0 0 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 1]),
+ 'agent_1': array([0, 1, 0, 0, 1]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 0, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 0, 0])}
+Intermediate voting result Dict: {'c4': 3, 'c2': 2, 'c3': 2, 'c0': 1, 'c1': 1}
+Intermediate Total Happiness: 2.336 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[['c4', 'c1'], ['c4', 'c2'], ['c4', 'c3'], ['c4', 'c0'], ['c1', 'c2'], ['c1', 'c3'], ['c1', 'c0'], ['c2', 'c3'], ['c2', 'c0'], ['c3', 'c0']]
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c4', 'c1', 'c2', 'c3', 'c0'], best_vote: [0 0 0 0 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 1]),
+ 'agent_1': array([0, 0, 0, 0, 1]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 0, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 0, 0])}
+Intermediate voting result Dict: {'c4': 3, 'c2': 2, 'c3': 2, 'c0': 1, 'c1': 0}
+Intermediate Total Happiness: 2.336 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 1]),
+ 'agent_1': array([0, 0, 0, 0, 1]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([0, 0, 1, 1, 0]),
+ 'agent_4': array([1, 0, 1, 0, 0])}
+Final voting result Dict: {'c4': 3, 'c2': 2, 'c3': 2, 'c0': 1, 'c1': 0}
+Fianl Total Happiness: 2.336
+[DEBUG]-[Env] calculate_risk total_votes:[3, 2, 2, 1, 0]
+Fianl Total Risk: 0.571
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: seasoned-level
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: combination,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c3', 'c4', 'c0', 'c2']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c0', 'c3', 'c4', 'c2', 'c1']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 1, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Inital voting result Dict: {'c3': 4, 'c0': 2, 'c1': 2, 'c4': 2, 'c2': 0} 
+
+Initial Total Happiness: 1.64 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.41700000000000004
+[['c1', 'c3'], ['c1', 'c4'], ['c1', 'c0'], ['c1', 'c2'], ['c3', 'c4'], ['c3', 'c0'], ['c3', 'c2'], ['c4', 'c0'], ['c4', 'c2'], ['c0', 'c2']]
+[Debug]-[set_vote]- max_hap: 0.41700000000000004, best_pref: ['c1', 'c3', 'c4', 'c0', 'c2'], best_vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Intermediate voting result Dict: {'c3': 3, 'c0': 2, 'c1': 2, 'c4': 2, 'c2': 0}
+Intermediate Total Happiness: 1.64 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5569999999999999
+[['c0', 'c3'], ['c0', 'c4'], ['c0', 'c2'], ['c0', 'c1'], ['c3', 'c4'], ['c3', 'c2'], ['c3', 'c1'], ['c4', 'c2'], ['c4', 'c1'], ['c2', 'c1']]
+[Debug]-[set_vote]- max_hap: 0.917, best_pref: ['c0', 'c3', 'c4', 'c2', 'c1'], best_vote: [1 0 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 0, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Intermediate voting result Dict: {'c0': 2, 'c1': 2, 'c3': 2, 'c4': 2, 'c2': 0}
+Intermediate Total Happiness: 1.809 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 0, 0]),
+ 'agent_2': array([0, 0, 0, 1, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 0, 0, 1, 1])}
+Final voting result Dict: {'c0': 2, 'c1': 2, 'c3': 2, 'c4': 2, 'c2': 0}
+Fianl Total Happiness: 1.809
+[DEBUG]-[Env] calculate_risk total_votes:[2, 2, 2, 2, 0]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: inventive-falls
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: voting_for_two,
+agent_vote_strategy: combination,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c2', 'c4', 'c3', 'c0']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c0', 'c3', 'c1', 'c4', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 1, 0, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 1, 0])}
+Inital voting result Dict: {'c0': 3, 'c1': 3, 'c3': 2, 'c2': 1, 'c4': 1} 
+
+Initial Total Happiness: 2.625 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0
+[['c1', 'c2'], ['c1', 'c4'], ['c1', 'c3'], ['c1', 'c0'], ['c2', 'c4'], ['c2', 'c3'], ['c2', 'c0'], ['c4', 'c3'], ['c4', 'c0'], ['c3', 'c0']]
+[Debug]-[set_vote]- max_hap: 0, best_pref: ['c1', 'c2', 'c4', 'c3', 'c0'], best_vote: [0 1 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 1, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 1, 0])}
+Intermediate voting result Dict: {'c0': 3, 'c1': 3, 'c3': 2, 'c4': 1, 'c2': 0}
+Intermediate Total Happiness: 2.625 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[['c0', 'c3'], ['c0', 'c1'], ['c0', 'c4'], ['c0', 'c2'], ['c3', 'c1'], ['c3', 'c4'], ['c3', 'c2'], ['c1', 'c4'], ['c1', 'c2'], ['c4', 'c2']]
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c0', 'c3', 'c1', 'c4', 'c2'], best_vote: [1 0 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 1, 0])}
+Intermediate voting result Dict: {'c0': 3, 'c1': 3, 'c3': 1, 'c4': 1, 'c2': 0}
+Intermediate Total Happiness: 2.625 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 1, 0, 0, 0]),
+ 'agent_1': array([1, 0, 0, 0, 0]),
+ 'agent_2': array([1, 0, 0, 0, 1]),
+ 'agent_3': array([1, 1, 0, 0, 0]),
+ 'agent_4': array([0, 1, 0, 1, 0])}
+Final voting result Dict: {'c0': 3, 'c1': 3, 'c3': 1, 'c4': 1, 'c2': 0}
+Fianl Total Happiness: 2.625
+[DEBUG]-[Env] calculate_risk total_votes:[3, 3, 1, 1, 0]
+Fianl Total Risk: 0.571
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: central-wolf
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: compromising,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c0', 'c2', 'c3', 'c4', 'c1']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c3', 'c0', 'c4', 'c2', 'c1']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [4, 0, 3, 2, 1],
+ 'agent_1': [3, 0, 1, 4, 2],
+ 'agent_2': [4, 3, 2, 0, 1],
+ 'agent_3': [3, 2, 1, 4, 0],
+ 'agent_4': [2, 3, 0, 4, 1]}
+Inital voting result Dict: {'c0': 16, 'c3': 14, 'c1': 8, 'c2': 7, 'c4': 5} 
+
+Initial Total Happiness: 2.836 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5
+[Debug]-[set_vote]- max_hap: 0.5, best_pref: ['c0', 'c2', 'c3', 'c4', 'c1'], best_vote: [4, 0, 3, 2, 1]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [4, 0, 3, 2, 1],
+ 'agent_1': [3, 0, 1, 4, 2],
+ 'agent_2': [4, 3, 2, 0, 1],
+ 'agent_3': [3, 2, 1, 4, 0],
+ 'agent_4': [2, 3, 0, 4, 1]}
+Intermediate voting result Dict: {'c0': 16, 'c3': 14, 'c1': 8, 'c2': 7, 'c4': 5}
+Intermediate Total Happiness: 2.836 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.5
+[Debug]-[set_vote]- max_hap: 0.667, best_pref: ['c2', 'c0', 'c3', 'c4', 'c1'], best_vote: [3, 0, 4, 2, 1]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [4, 0, 3, 2, 1],
+ 'agent_1': [3, 0, 4, 2, 1],
+ 'agent_2': [4, 3, 2, 0, 1],
+ 'agent_3': [3, 2, 1, 4, 0],
+ 'agent_4': [2, 3, 0, 4, 1]}
+Intermediate voting result Dict: {'c0': 16, 'c3': 12, 'c2': 10, 'c1': 8, 'c4': 4}
+Intermediate Total Happiness: 2.67 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [4, 0, 3, 2, 1],
+ 'agent_1': [3, 0, 4, 2, 1],
+ 'agent_2': [4, 3, 2, 0, 1],
+ 'agent_3': [3, 2, 1, 4, 0],
+ 'agent_4': [2, 3, 0, 4, 1]}
+Final voting result Dict: {'c0': 16, 'c3': 12, 'c2': 10, 'c1': 8, 'c4': 4}
+Fianl Total Happiness: 2.67
+[DEBUG]-[Env] calculate_risk total_votes:[16, 12, 10, 8, 4]
+Fianl Total Risk: 0.25
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: felt-ragdoll
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: compromising,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c3', 'c0', 'c4', 'c1', 'c2']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c1', 'c3', 'c2', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 0, 4, 2],
+ 'agent_1': [0, 3, 1, 2, 4],
+ 'agent_2': [4, 3, 1, 0, 2],
+ 'agent_3': [2, 4, 3, 1, 0],
+ 'agent_4': [1, 0, 4, 3, 2]}
+Inital voting result Dict: {'c1': 11, 'c0': 10, 'c3': 10, 'c4': 10, 'c2': 9} 
+
+Initial Total Happiness: 1.8929999999999998 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.472
+[Debug]-[set_vote]- max_hap: 0.472, best_pref: ['c3', 'c0', 'c4', 'c1', 'c2'], best_vote: [3, 1, 0, 4, 2]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 0, 4, 2],
+ 'agent_1': [0, 3, 1, 2, 4],
+ 'agent_2': [4, 3, 1, 0, 2],
+ 'agent_3': [2, 4, 3, 1, 0],
+ 'agent_4': [1, 0, 4, 3, 2]}
+Intermediate voting result Dict: {'c1': 11, 'c0': 10, 'c3': 10, 'c4': 10, 'c2': 9}
+Intermediate Total Happiness: 1.8929999999999998 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.33399999999999996
+[Debug]-[set_vote]- max_hap: 0.472, best_pref: ['c4', 'c2', 'c1', 'c3', 'c0'], best_vote: [0, 2, 3, 1, 4]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 0, 4, 2],
+ 'agent_1': [0, 2, 3, 1, 4],
+ 'agent_2': [4, 3, 1, 0, 2],
+ 'agent_3': [2, 4, 3, 1, 0],
+ 'agent_4': [1, 0, 4, 3, 2]}
+Intermediate voting result Dict: {'c2': 11, 'c0': 10, 'c1': 10, 'c4': 10, 'c3': 9}
+Intermediate Total Happiness: 1.893 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 0, 4, 2],
+ 'agent_1': [0, 2, 3, 1, 4],
+ 'agent_2': [4, 3, 1, 0, 2],
+ 'agent_3': [2, 4, 3, 1, 0],
+ 'agent_4': [1, 0, 4, 3, 2]}
+Final voting result Dict: {'c2': 11, 'c0': 10, 'c1': 10, 'c4': 10, 'c3': 9}
+Fianl Total Happiness: 1.893
+[DEBUG]-[Env] calculate_risk total_votes:[11, 10, 10, 10, 9]
+Fianl Total Risk: 0.667
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: connected-dolly
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: compromising,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c4', 'c2', 'c0', 'c1', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c3', 'c2', 'c0', 'c1']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [2, 1, 3, 0, 4],
+ 'agent_1': [1, 0, 2, 3, 4],
+ 'agent_2': [2, 0, 1, 4, 3],
+ 'agent_3': [4, 0, 1, 2, 3],
+ 'agent_4': [3, 0, 2, 4, 1]}
+Inital voting result Dict: {'c4': 15, 'c3': 13, 'c0': 12, 'c2': 9, 'c1': 1} 
+
+Initial Total Happiness: 3.125 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c4', 'c2', 'c0', 'c1', 'c3'], best_vote: [2, 1, 3, 0, 4]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [2, 1, 3, 0, 4],
+ 'agent_1': [1, 0, 2, 3, 4],
+ 'agent_2': [2, 0, 1, 4, 3],
+ 'agent_3': [4, 0, 1, 2, 3],
+ 'agent_4': [3, 0, 2, 4, 1]}
+Intermediate voting result Dict: {'c4': 15, 'c3': 13, 'c0': 12, 'c2': 9, 'c1': 1}
+Intermediate Total Happiness: 3.125 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c4', 'c3', 'c2', 'c0', 'c1'], best_vote: [1, 0, 2, 3, 4]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [2, 1, 3, 0, 4],
+ 'agent_1': [1, 0, 2, 3, 4],
+ 'agent_2': [2, 0, 1, 4, 3],
+ 'agent_3': [4, 0, 1, 2, 3],
+ 'agent_4': [3, 0, 2, 4, 1]}
+Intermediate voting result Dict: {'c4': 15, 'c3': 13, 'c0': 12, 'c2': 9, 'c1': 1}
+Intermediate Total Happiness: 3.125 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [2, 1, 3, 0, 4],
+ 'agent_1': [1, 0, 2, 3, 4],
+ 'agent_2': [2, 0, 1, 4, 3],
+ 'agent_3': [4, 0, 1, 2, 3],
+ 'agent_4': [3, 0, 2, 4, 1]}
+Final voting result Dict: {'c4': 15, 'c3': 13, 'c0': 12, 'c2': 9, 'c1': 1}
+Fianl Total Happiness: 3.125
+[DEBUG]-[Env] calculate_risk total_votes:[15, 13, 12, 9, 1]
+Fianl Total Risk: 0.222
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: pallid-contract
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: bullet_voting,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c1', 'c0', 'c4', 'c2', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c3', 'c0', 'c1', 'c4']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 4, 1, 0, 2],
+ 'agent_1': [2, 1, 4, 3, 0],
+ 'agent_2': [1, 3, 4, 2, 0],
+ 'agent_3': [2, 4, 1, 3, 0],
+ 'agent_4': [4, 1, 3, 0, 2]}
+Inital voting result Dict: {'c1': 13, 'c2': 13, 'c0': 12, 'c3': 8, 'c4': 4} 
+
+Initial Total Happiness: 2.667 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c1', 'c0', 'c4', 'c2', 'c3'], voting_output: {'c1': 13, 'c2': 12, 'c0': 9, 'c3': 8, 'c4': 2}, happiness: 0.5, bullet vote: [0 4 0 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 4, 1, 0, 2],
+ 'agent_1': [2, 1, 4, 3, 0],
+ 'agent_2': [1, 3, 4, 2, 0],
+ 'agent_3': [2, 4, 1, 3, 0],
+ 'agent_4': [4, 1, 3, 0, 2]}
+Intermediate voting result Dict: {'c1': 13, 'c2': 13, 'c0': 12, 'c3': 8, 'c4': 4}
+Intermediate Total Happiness: 2.667 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c2', 'c3', 'c0', 'c1', 'c4'], voting_output: {'c1': 12, 'c2': 12, 'c0': 7, 'c3': 5, 'c4': 2}, happiness: 0.5, bullet vote: [0 0 4 0 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 4, 1, 0, 2],
+ 'agent_1': [2, 1, 4, 3, 0],
+ 'agent_2': [1, 3, 4, 2, 0],
+ 'agent_3': [2, 4, 1, 3, 0],
+ 'agent_4': [4, 1, 3, 0, 2]}
+Intermediate voting result Dict: {'c1': 13, 'c2': 13, 'c0': 12, 'c3': 8, 'c4': 4}
+Intermediate Total Happiness: 2.667 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 4, 1, 0, 2],
+ 'agent_1': [2, 1, 4, 3, 0],
+ 'agent_2': [1, 3, 4, 2, 0],
+ 'agent_3': [2, 4, 1, 3, 0],
+ 'agent_4': [4, 1, 3, 0, 2]}
+Final voting result Dict: {'c1': 13, 'c2': 13, 'c0': 12, 'c3': 8, 'c4': 4}
+Fianl Total Happiness: 2.667
+[DEBUG]-[Env] calculate_risk total_votes:[13, 13, 12, 8, 4]
+Fianl Total Risk: 0.308
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: flush-concourse
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: bullet_voting,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c3', 'c0', 'c2', 'c1', 'c4']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c2', 'c3', 'c0', 'c1']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 2, 4, 0],
+ 'agent_1': [1, 0, 3, 2, 4],
+ 'agent_2': [3, 4, 2, 1, 0],
+ 'agent_3': [3, 2, 0, 4, 1],
+ 'agent_4': [2, 1, 4, 3, 0]}
+Inital voting result Dict: {'c3': 14, 'c0': 12, 'c2': 11, 'c1': 8, 'c4': 5} 
+
+Initial Total Happiness: 2.7790000000000004 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c3', 'c0', 'c2', 'c1', 'c4'], voting_output: {'c3': 14, 'c0': 9, 'c2': 9, 'c1': 7, 'c4': 5}, happiness: 1.0, bullet vote: [0 0 0 4 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 2, 4, 0],
+ 'agent_1': [1, 0, 3, 2, 4],
+ 'agent_2': [3, 4, 2, 1, 0],
+ 'agent_3': [3, 2, 0, 4, 1],
+ 'agent_4': [2, 1, 4, 3, 0]}
+Intermediate voting result Dict: {'c3': 14, 'c0': 12, 'c2': 11, 'c1': 8, 'c4': 5}
+Intermediate Total Happiness: 2.7790000000000004 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c4', 'c2', 'c3', 'c0', 'c1'], voting_output: {'c3': 12, 'c0': 8, 'c1': 7, 'c2': 6, 'c4': 5}, happiness: 0, bullet vote: [0 0 0 0 4]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 2, 4, 0],
+ 'agent_1': [1, 0, 3, 2, 4],
+ 'agent_2': [3, 4, 2, 1, 0],
+ 'agent_3': [3, 2, 0, 4, 1],
+ 'agent_4': [2, 1, 4, 3, 0]}
+Intermediate voting result Dict: {'c3': 14, 'c0': 12, 'c2': 11, 'c1': 8, 'c4': 5}
+Intermediate Total Happiness: 2.7790000000000004 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 2, 4, 0],
+ 'agent_1': [1, 0, 3, 2, 4],
+ 'agent_2': [3, 4, 2, 1, 0],
+ 'agent_3': [3, 2, 0, 4, 1],
+ 'agent_4': [2, 1, 4, 3, 0]}
+Final voting result Dict: {'c3': 14, 'c0': 12, 'c2': 11, 'c1': 8, 'c4': 5}
+Fianl Total Happiness: 2.7790000000000004
+[DEBUG]-[Env] calculate_risk total_votes:[14, 12, 11, 8, 5]
+Fianl Total Risk: 0.308
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: jolly-BLT
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: bullet_voting,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c4', 'c0', 'c3', 'c2', 'c1']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c0', 'c3', 'c1', 'c2']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 0, 1, 2, 4],
+ 'agent_1': [3, 1, 0, 2, 4],
+ 'agent_2': [0, 1, 4, 3, 2],
+ 'agent_3': [1, 4, 2, 0, 3],
+ 'agent_4': [1, 3, 4, 0, 2]}
+Inital voting result Dict: {'c4': 15, 'c2': 11, 'c1': 9, 'c0': 8, 'c3': 7} 
+
+Initial Total Happiness: 3.0 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c4', 'c0', 'c3', 'c2', 'c1'], voting_output: {'c4': 15, 'c2': 10, 'c1': 9, 'c0': 5, 'c3': 5}, happiness: 1.0, bullet vote: [0 0 0 0 4]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 0, 1, 2, 4],
+ 'agent_1': [3, 1, 0, 2, 4],
+ 'agent_2': [0, 1, 4, 3, 2],
+ 'agent_3': [1, 4, 2, 0, 3],
+ 'agent_4': [1, 3, 4, 0, 2]}
+Intermediate voting result Dict: {'c4': 15, 'c2': 11, 'c1': 9, 'c0': 8, 'c3': 7}
+Intermediate Total Happiness: 3.0 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- pref: ['c4', 'c0', 'c3', 'c1', 'c2'], voting_output: {'c4': 15, 'c2': 10, 'c1': 8, 'c3': 3, 'c0': 2}, happiness: 1.0, bullet vote: [0 0 0 0 4]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 0, 1, 2, 4],
+ 'agent_1': [3, 1, 0, 2, 4],
+ 'agent_2': [0, 1, 4, 3, 2],
+ 'agent_3': [1, 4, 2, 0, 3],
+ 'agent_4': [1, 3, 4, 0, 2]}
+Intermediate voting result Dict: {'c4': 15, 'c2': 11, 'c1': 9, 'c0': 8, 'c3': 7}
+Intermediate Total Happiness: 3.0 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 0, 1, 2, 4],
+ 'agent_1': [3, 1, 0, 2, 4],
+ 'agent_2': [0, 1, 4, 3, 2],
+ 'agent_3': [1, 4, 2, 0, 3],
+ 'agent_4': [1, 3, 4, 0, 2]}
+Final voting result Dict: {'c4': 15, 'c2': 11, 'c1': 9, 'c0': 8, 'c3': 7}
+Fianl Total Happiness: 3.0
+[DEBUG]-[Env] calculate_risk total_votes:[15, 11, 9, 8, 7]
+Fianl Total Risk: 0.333
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: wide-octree
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: combination,
+happiness_type: A, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c2', 'c0', 'c4', 'c1', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c3', 'c2', 'c1', 'c0']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 4, 0, 2],
+ 'agent_1': [0, 1, 2, 3, 4],
+ 'agent_2': [2, 0, 3, 4, 1],
+ 'agent_3': [2, 4, 0, 1, 3],
+ 'agent_4': [0, 4, 2, 1, 3]}
+Inital voting result Dict: {'c4': 13, 'c2': 11, 'c1': 10, 'c3': 9, 'c0': 7} 
+
+Initial Total Happiness: 2.167 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.3340000000000001
+[Debug]-[set_vote]- max_hap: 0.5009999999999999, best_pref: ['c2', 'c4', 'c3', 'c1', 'c0'], best_vote: [0 0 4 0 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 4, 0, 0]),
+ 'agent_1': [0, 1, 2, 3, 4],
+ 'agent_2': [2, 0, 3, 4, 1],
+ 'agent_3': [2, 4, 0, 1, 3],
+ 'agent_4': [0, 4, 2, 1, 3]}
+Intermediate voting result Dict: {'c2': 11, 'c4': 11, 'c1': 9, 'c3': 9, 'c0': 4}
+Intermediate Total Happiness: 2.4989999999999997 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.667
+[Debug]-[set_vote]- max_hap: 0.834, best_pref: ['c4', 'c0', 'c2', 'c3', 'c1'], best_vote: [0 0 0 0 4]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 4, 0, 0]),
+ 'agent_1': array([0, 0, 0, 0, 4]),
+ 'agent_2': [2, 0, 3, 4, 1],
+ 'agent_3': [2, 4, 0, 1, 3],
+ 'agent_4': [0, 4, 2, 1, 3]}
+Intermediate voting result Dict: {'c4': 11, 'c2': 9, 'c1': 8, 'c3': 6, 'c0': 4}
+Intermediate Total Happiness: 2.3339999999999996 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 4, 0, 0]),
+ 'agent_1': array([0, 0, 0, 0, 4]),
+ 'agent_2': [2, 0, 3, 4, 1],
+ 'agent_3': [2, 4, 0, 1, 3],
+ 'agent_4': [0, 4, 2, 1, 3]}
+Final voting result Dict: {'c4': 11, 'c2': 9, 'c1': 8, 'c3': 6, 'c0': 4}
+Fianl Total Happiness: 2.3339999999999996
+[DEBUG]-[Env] calculate_risk total_votes:[11, 9, 8, 6, 4]
+Fianl Total Risk: 0.364
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: future-boosting
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: combination,
+happiness_type: B, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c4', 'c0', 'c2', 'c1', 'c3']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c2', 'c1', 'c4', 'c0', 'c3']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [3, 1, 2, 0, 4],
+ 'agent_1': [1, 3, 4, 0, 2],
+ 'agent_2': [2, 3, 1, 0, 4],
+ 'agent_3': [1, 3, 0, 4, 2],
+ 'agent_4': [1, 4, 3, 0, 2]}
+Inital voting result Dict: {'c1': 14, 'c4': 14, 'c2': 10, 'c0': 8, 'c3': 4} 
+
+Initial Total Happiness: 2.615 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.472
+[Debug]-[set_vote]- max_hap: 0.6659999999999999, best_pref: ['c4', 'c0', 'c2', 'c3', 'c1'], best_vote: [0 0 0 0 4]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 4]),
+ 'agent_1': [1, 3, 4, 0, 2],
+ 'agent_2': [2, 3, 1, 0, 4],
+ 'agent_3': [1, 3, 0, 4, 2],
+ 'agent_4': [1, 4, 3, 0, 2]}
+Intermediate voting result Dict: {'c4': 14, 'c1': 13, 'c2': 8, 'c0': 5, 'c3': 4}
+Intermediate Total Happiness: 2.862 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.528
+[Debug]-[set_vote]- max_hap: 0.5569999999999999, best_pref: ['c2', 'c4', 'c3', 'c1', 'c0'], best_vote: [0 0 4 0 0]
+
+[Debug]-[set_vote]- strategic_voted: True
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 4]),
+ 'agent_1': array([0, 0, 4, 0, 0]),
+ 'agent_2': [2, 3, 1, 0, 4],
+ 'agent_3': [1, 3, 0, 4, 2],
+ 'agent_4': [1, 4, 3, 0, 2]}
+Intermediate voting result Dict: {'c4': 12, 'c1': 10, 'c2': 8, 'c0': 4, 'c3': 4}
+Intermediate Total Happiness: 2.612 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 0, 4]),
+ 'agent_1': array([0, 0, 4, 0, 0]),
+ 'agent_2': [2, 3, 1, 0, 4],
+ 'agent_3': [1, 3, 0, 4, 2],
+ 'agent_4': [1, 4, 3, 0, 2]}
+Final voting result Dict: {'c4': 12, 'c1': 10, 'c2': 8, 'c0': 4, 'c3': 4}
+Fianl Total Happiness: 2.612
+[DEBUG]-[Env] calculate_risk total_votes:[12, 10, 8, 4, 4]
+Fianl Total Risk: 0.333
+
+
+
+####################################################################################################
+####################################################################################################
+Creating Enviroment: uniform-drawer
+[Env]-[Params]:, 
+candidates: ['c0', 'c1', 'c2', 'c3', 'c4'], 
+voting scheme: borda,
+agent_vote_strategy: combination,
+happiness_type: C, 
+num_agents: 5, 
+num_strat_agents: 2
+####################################################################################################
+[DEBUG]-[Env]- Agent: agent_0, strategic_agent: True, preference: ['c3', 'c1', 'c4', 'c2', 'c0']
+
+[DEBUG]-[Env]- Agent: agent_1, strategic_agent: True, preference: ['c4', 'c0', 'c1', 'c2', 'c3']
+
+[Debug]-[run_tva]-Runing a voting process... 
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': [0, 3, 1, 4, 2],
+ 'agent_1': [3, 2, 1, 0, 4],
+ 'agent_2': [1, 0, 4, 2, 3],
+ 'agent_3': [0, 4, 2, 3, 1],
+ 'agent_4': [3, 0, 2, 1, 4]}
+Inital voting result Dict: {'c4': 14, 'c2': 10, 'c3': 10, 'c1': 9, 'c0': 7} 
+
+Initial Total Happiness: 2.875 
+
+****************************************************************************************************
+Startegic agent 0 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 0.25
+[Debug]-[set_vote]- max_hap: 0.25, best_pref: ['c3', 'c1', 'c4', 'c2', 'c0'], best_vote: [0 0 0 4 0]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 4, 0]),
+ 'agent_1': [3, 2, 1, 0, 4],
+ 'agent_2': [1, 0, 4, 2, 3],
+ 'agent_3': [0, 4, 2, 3, 1],
+ 'agent_4': [3, 0, 2, 1, 4]}
+Intermediate voting result Dict: {'c4': 12, 'c3': 10, 'c2': 9, 'c0': 7, 'c1': 6}
+Intermediate Total Happiness: 2.875 
+
+****************************************************************************************************
+Startegic agent 1 is giving vote 
+
+[Debug]-[set_vote]- hap_init: 1.0
+[Debug]-[set_vote]- max_hap: 1.0, best_pref: ['c4', 'c0', 'c1', 'c2', 'c3'], best_vote: [0 0 0 0 4]
+
+[Debug]-[set_vote]- strategic_voted: False
+
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 4, 0]),
+ 'agent_1': array([0, 0, 0, 0, 4]),
+ 'agent_2': [1, 0, 4, 2, 3],
+ 'agent_3': [0, 4, 2, 3, 1],
+ 'agent_4': [3, 0, 2, 1, 4]}
+Intermediate voting result Dict: {'c4': 12, 'c3': 10, 'c2': 8, 'c0': 4, 'c1': 4}
+Intermediate Total Happiness: 2.875 
+
+****************************************************************************************************
+****************************************************************************************************
+[DEBUG]-[Env]- votes: 
+
+{'agent_0': array([0, 0, 0, 4, 0]),
+ 'agent_1': array([0, 0, 0, 0, 4]),
+ 'agent_2': [1, 0, 4, 2, 3],
+ 'agent_3': [0, 4, 2, 3, 1],
+ 'agent_4': [3, 0, 2, 1, 4]}
+Final voting result Dict: {'c4': 12, 'c3': 10, 'c2': 8, 'c0': 4, 'c1': 4}
+Fianl Total Happiness: 2.875
+[DEBUG]-[Env] calculate_risk total_votes:[12, 10, 8, 4, 4]
+Fianl Total Risk: 0.333
