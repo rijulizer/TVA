@@ -148,10 +148,7 @@ class Environment:
         print(f"Final voting result Dict: {env_final_result}")
 
         self.cal_total_happiness(env_final_result_list)
-        print(f"Final Total Happiness: {self.total_happiness}")
-        
-        risk = self.calculate_final_risk()
-        print(f"Overall Risk: {risk}")
+        print(f"Fianl Total Happiness: {self.total_happiness}")
 
 if __name__ == "__main__":
     
