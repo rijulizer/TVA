@@ -27,6 +27,7 @@ class Environment:
         self.num_agents = num_agents
         self.num_strat_agents = num_strat_agents
         self.happiness_type = happiness_type
+        self.strategy_occured = False
         
         self.agents = []
         self.agent_prefs = {}
@@ -75,6 +76,8 @@ class Environment:
                 self.agent_votes[a.name] = a.final_vote
             else:
                 self.agent_votes[a.name] = map_vote(self.env_vote_scheme, self.env_candidates, a.real_preference)
+            if a.strategy_occured:
+                self.strategy_occured = True
         print(f"[DEBUG]-[Env]- votes: \n")
         pprint(self.agent_votes)
    
@@ -233,6 +236,7 @@ if __name__ == "__main__":
         num_strat_agents
     )
     env.run_tva()
+    risk = env.calculate_final_risk()
  
 # running instruction            
 #    --candidates 'c1' 'c2' 'c3' 'c4' --scheme 'borda' --strategy 'compromising' --num_agents 5 --num_strat_agents 2

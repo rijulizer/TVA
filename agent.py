@@ -13,6 +13,7 @@ class Agent:
         self.strategy = False
         self.real_preference = []
         # self.happiness = 0
+        self.strategy_occured = False
         self.best_pref = []
         self.final_vote = []
 
@@ -125,6 +126,7 @@ class Agent:
 
                     if happiness > max_hap:
                         strategic_voted = True
+                        self.strategy_occured = True
                         max_hap = happiness
                         best_pref = list(comb)
                         best_vote = map_vote(env_vote_scheme, env_candidates, list(comb), bullet_voting)
@@ -147,6 +149,8 @@ class Agent:
                 if happiness > hap_init:
                     risk_counter += 1
                     strategic_voted = True
+                    self.strategy_occured = True
+
                     self.final_vote = bullet_vote
 
                 self.best_pref = self.real_preference
